@@ -1,0 +1,19 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 10;
+}
+
+.meImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0% 70%;
+}
+
+.text {
+  background-color: var(--main-color);
+}
