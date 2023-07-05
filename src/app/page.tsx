@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import React, { useEffect } from "react";
-import HeroSection from "@/components/HeroSection";
-import AboutMeSection from "@/components/AboutMeSection";
+import React, { useEffect, useRef } from "react";
+import HeroSection from "@/components/sections/HeroSection";
+import AboutMeSection from "@/components/sections/AboutMeSection";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
+  const aboutMeRef = useRef(null);
   return (
     <main className={styles.main}>
+      <Navbar aboutMeRef={aboutMeRef} />
       <HeroSection />
-      <AboutMeSection />
+      <AboutMeSection aboutMeRef={aboutMeRef} />
     </main>
   );
 }

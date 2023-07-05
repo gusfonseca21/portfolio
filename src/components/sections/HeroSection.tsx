@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
-  const movementStrength = 50;
+  const movementStrength = 75;
 
   const moveBackground = (e: React.MouseEvent) => {
     const height = movementStrength / window.innerHeight;

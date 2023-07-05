@@ -1,0 +1,48 @@
+import React, { useState, useEffect } from "react";
+import styles from "./Navbar.module.css";
+
+interface NavbarProps {
+  aboutMeRef: React.RefObject<HTMLElement>;
+}
+
+export default function Navbar({ aboutMeRef }: NavbarProps) {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [hasHeroPassed, setHasHeroPassed] = useState<Boolean>(false);
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (aboutMeRef.current) {
+      if (scrollPosition >= aboutMeRef.current?.offsetTop - 5) {
+        setHasHeroPassed(true);
+      } else {
+        setHasHeroPassed(false);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollPosition]);
+
+  return (
+    <nav
+      className={styles.main}
+      style={{ backgroundColor: hasHeroPassed ? "red" : "transparent" }}
+    >
+      <div className={styles["left-links"]}>
+        <a>About</a>
+        <a>Work</a>
+      </div>
+      <a className={styles.logo}>Gustavo Fonseca</a>
+      <div className={styles["hit-me"]}>Hit me up</div>
+    </nav>
+  );
+}
