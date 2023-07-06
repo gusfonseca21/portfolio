@@ -1,0 +1,32 @@
+.button {
+  border: 1px solid #fff;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  transform: skew(360deg);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: #fff;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.button:hover {
+  color: var(--main-color);
+}
+
+.button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
