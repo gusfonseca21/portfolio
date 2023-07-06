@@ -97,11 +97,7 @@ export const AnimatedHeading: React.FC<AnimatedHeading> = ({ headings }) => {
           exit='exit'
         >
           {currentHeading.split("").map((char, index) => (
-            <motion.span
-              key={`${char}-${index}`}
-              // className='inline-block whitespace-pre'
-              variants={letterVariants}
-            >
+            <motion.span key={`${char}-${index}`} variants={letterVariants}>
               {char}
             </motion.span>
           ))}

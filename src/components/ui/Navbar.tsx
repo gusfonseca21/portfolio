@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
+import Button from "../Button";
+import Image from "next/image";
+import logo from "../../../public/images/logo2.png";
 
 interface NavbarProps {
   aboutMeRef: React.RefObject<HTMLElement>;
@@ -32,6 +35,10 @@ export default function Navbar({ aboutMeRef }: NavbarProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollPosition]);
 
+  const funcTeste = () => {
+    console.log(`DEVE LEVAR À SEÇÃO DE CONTATO`);
+  };
+
   return (
     <nav className={`${styles.main} ${hasHeroPassed && styles.glossy} `}>
       <div className={styles["left-links"]}>
@@ -39,9 +46,9 @@ export default function Navbar({ aboutMeRef }: NavbarProps) {
         <a href='#'>Work</a>
       </div>
       <div className={styles.logo}>
-        <a>Gustavo Fonseca</a>
+        <Image src={logo} alt='Gustavo Fonseca' width={180} />
       </div>
-      <div className={styles["hit-me"]}>Hit me up</div>
+      <Button text='Hit me up!' clickFunction={funcTeste} />
     </nav>
   );
 }

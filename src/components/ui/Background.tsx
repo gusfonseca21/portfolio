@@ -7,7 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import styles from "./Background.module.css";
-import grid from "../../public/images/grid.svg";
+import grid from "../../../public/images/grid.svg";
 
 const springConfig = {
   damping: 17.5,

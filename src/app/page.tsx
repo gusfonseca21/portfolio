@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import React, { useEffect, useRef } from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/ui/Navbar";
 
 export default function Home() {
   const aboutMeRef = useRef(null);

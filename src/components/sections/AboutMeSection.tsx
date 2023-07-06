@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./AboutMeSection.module.css";
 import Image from "next/image";
 import meImage from "../../../public/images/me.jpg";
-import { AnimatedHeading } from "../AnimatedHeading";
+import { AnimatedHeading } from "../ui/AnimatedHeading";
 
 const headings = [
   "Developer",
