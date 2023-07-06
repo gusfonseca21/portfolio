@@ -1,0 +1,11 @@
+.background {
+  pointer-events: none;
+  position: absolute;
+  /* z-index: -1; */
+  /* overflow: hidden; */
+  background-color: var(--primary-color);
+  background-repeat: no-repeat;
+  background-size: 150%;
+  height: 100vh;
+  width: 100%;
+}

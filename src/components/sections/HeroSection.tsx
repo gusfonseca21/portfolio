@@ -1,24 +1,11 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
+import Background from "../Background";
 
 export default function HeroSection() {
-  const movementStrength = 75;
-
-  const moveBackground = (e: React.MouseEvent) => {
-    const height = movementStrength / window.innerHeight;
-    const width = movementStrength / window.innerWidth;
-
-    const pageX = e.pageX - window.innerWidth / 2;
-    const pageY = e.pageY - window.innerHeight / 2;
-
-    const newValueX = width * pageX - 1 - 25;
-    const newValyeY = height * pageY * -1 - 50;
-
-    const sectionEl = e.target as HTMLElement;
-    sectionEl.style.backgroundPosition = `${newValueX}px ${newValyeY}px`;
-  };
   return (
-    <section className={styles.main} onMouseMove={(e) => moveBackground(e)}>
+    <section className={styles.main}>
+      <Background />
       <div className={styles.heading}>
         <h1>Programming and Design from the Future</h1>
       </div>

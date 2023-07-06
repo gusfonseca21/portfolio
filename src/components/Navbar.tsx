@@ -33,15 +33,14 @@ export default function Navbar({ aboutMeRef }: NavbarProps) {
   }, [scrollPosition]);
 
   return (
-    <nav
-      className={styles.main}
-      style={{ backgroundColor: hasHeroPassed ? "red" : "transparent" }}
-    >
+    <nav className={`${styles.main} ${hasHeroPassed && styles.glossy} `}>
       <div className={styles["left-links"]}>
-        <a>About</a>
-        <a>Work</a>
+        <a href='#'>About</a>
+        <a href='#'>Work</a>
       </div>
-      <a className={styles.logo}>Gustavo Fonseca</a>
+      <div className={styles.logo}>
+        <a>Gustavo Fonseca</a>
+      </div>
       <div className={styles["hit-me"]}>Hit me up</div>
     </nav>
   );
