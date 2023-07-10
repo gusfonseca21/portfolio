@@ -5,7 +5,7 @@ import Button from "../Button";
 
 export default function HeroSection() {
   return (
-    <section className={styles.main}>
+    <section id='hero' className={styles.main}>
       <Background />
       <div className={styles.heading}>
         <h1>
