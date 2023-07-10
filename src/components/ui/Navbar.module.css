@@ -42,6 +42,10 @@
   padding: 0.2em 0;
 }
 
+.left-links a:hover {
+  cursor: pointer;
+}
+
 /* Fade in */
 .left-links a::after {
   content: "";
