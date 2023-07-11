@@ -1,0 +1,71 @@
+.main {
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.project-slider {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  cursor: grab;
+}
+
+.project-slider:active {
+  cursor: grabbing;
+}
+
+.project-image-div {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 464px;
+  width: 309px;
+  position: relative;
+  transition: filter 300ms ease-in-out;
+}
+
+.project-image-div:hover {
+  cursor: pointer;
+}
+
+.project-image-div:active {
+  cursor: grabbing;
+}
+
+.project-image {
+  object-position: center -200px;
+  object-fit: contain;
+  transition: scale 800ms ease-in-out, filter 300ms ease-in-out;
+}
+
+.project-image-div:hover .project-image {
+  scale: 1.05;
+  filter: brightness(0.6) blur(4px);
+}
+
+.slider-feedback {
+  position: absolute;
+  bottom: -15%;
+  right: 50%;
+  transform: translate(50%);
+  margin-top: 1rem;
+  height: 1px;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.249);
+  pointer-events: none;
+}
+
+.slider-fill {
+  height: 100%;
+  max-width: 100%;
+  background-image: radial-gradient(#ffffff, rgba(255, 255, 255, 0.11));
+}

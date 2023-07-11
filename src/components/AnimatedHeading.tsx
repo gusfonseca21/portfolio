@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import styles from "./AnimatedHeading.module.css";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import usePreviousState from "@/hooks/usePreviousState";
 
@@ -86,7 +85,7 @@ export const AnimatedHeading: React.FC<AnimatedHeading> = ({ headings }) => {
   }, [typingMode, updateTypingModeTimer]);
 
   return (
-    <span className={styles.heading}>
+    <span className='section-heading'>
       <AnimatePresence mode='wait'>
         <motion.h2
           aria-hidden

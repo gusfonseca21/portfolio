@@ -1,0 +1,38 @@
+.container {
+  overflow: hidden;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.container span {
+  display: inline-block;
+}
+
+.text-div {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  user-select: none;
+}
+
+.project-date {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.project-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.project-subheader {
+  font-size: 0.9rem;
+}

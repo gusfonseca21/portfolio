@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./AboutMeSection.module.css";
 import Image from "next/image";
 import meImage from "../../../public/images/me.jpg";
-import { AnimatedHeading } from "../ui/AnimatedHeading";
+import { AnimatedHeading } from "../AnimatedHeading";
 
 const headings = [
   "Developer",
@@ -19,8 +19,9 @@ interface AboutMeProps {
 
 export default function AboutMeSection({ aboutMeRef }: AboutMeProps) {
   return (
-    <section className={styles.main} ref={aboutMeRef}>
+    <section id='about' className={styles.main} ref={aboutMeRef}>
       <Image
+        draggable={false}
         className={styles.meImage}
         src={meImage}
         alt='Gustavo Fonseca'
@@ -29,7 +30,7 @@ export default function AboutMeSection({ aboutMeRef }: AboutMeProps) {
       />
 
       <div className={styles.text}>
-        <span className={styles.about}>About</span>
+        <span className='section-title'>About</span>
         <span className={styles.heading}>
           <AnimatedHeading headings={headings} />
         </span>
