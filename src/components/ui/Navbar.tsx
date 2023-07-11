@@ -12,7 +12,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ aboutMeRef }: NavbarProps) {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
   const [hasHeroPassed, setHasHeroPassed] = useState<Boolean>(false);
 
   const handleScroll = () => {
