@@ -29,25 +29,25 @@
   overflow: hidden;
   height: 464px;
   width: 309px;
-  /* position: relative; */
+  position: relative;
   transition: filter 300ms ease-in-out;
 }
 
-.project-image:hover {
+.project-image-div:hover {
   cursor: pointer;
 }
 
-.project-image:active {
+.project-image-div:active {
   cursor: grabbing;
 }
 
 .project-image {
   object-position: center -200px;
   object-fit: contain;
-  transition: scale 300ms ease-in-out, filter 300ms ease-in-out;
+  transition: scale 800ms ease-in-out, filter 300ms ease-in-out;
 }
 
-.project-image:hover {
+.project-image-div:hover .project-image {
   scale: 1.05;
   filter: brightness(0.6) blur(4px);
 }
@@ -60,12 +60,12 @@
   margin-top: 1rem;
   height: 1px;
   width: 50%;
-  background-color: rgba(255, 255, 255, 0.229);
+  background-color: rgba(255, 255, 255, 0.249);
   pointer-events: none;
 }
 
 .slider-fill {
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.514);
   max-width: 100%;
+  background-image: radial-gradient(#ffffff, rgba(255, 255, 255, 0.11));
 }
