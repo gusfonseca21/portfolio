@@ -46,6 +46,11 @@
   /* --primary-color: #ff4081; */
 }
 
+::selection {
+  color: #fff;
+  background: var(--primary-color);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -104,6 +109,22 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.section-heading {
+  font-size: 2rem;
 }
 
 @media (prefers-color-scheme: dark) {

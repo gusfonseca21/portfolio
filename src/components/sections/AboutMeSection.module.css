@@ -1,6 +1,4 @@
 .main {
-  height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -22,9 +20,4 @@
   gap: 0.5rem;
   background-color: var(--main-color);
   padding: 3rem;
-}
-
-.about {
-  font-size: 1.3rem;
-  color: var(--primary-color);
 }

@@ -1,10 +1,12 @@
 "use client";
-import Image from "next/image";
-import styles from "./page.module.css";
-import React, { useEffect, useRef } from "react";
-import HeroSection from "@/components/sections/HeroSection";
-import AboutMeSection from "@/components/sections/AboutMeSection";
+import React, { useRef } from "react";
 import Navbar from "@/components/ui/Navbar";
+import {
+  HeroSection,
+  AboutMeSection,
+  WorkSection,
+} from "../components/sections";
+import styles from "./page.module.css";
 
 export default function Home() {
   const aboutMeRef = useRef(null);
@@ -13,6 +15,7 @@ export default function Home() {
       <Navbar aboutMeRef={aboutMeRef} />
       <HeroSection />
       <AboutMeSection aboutMeRef={aboutMeRef} />
+      <WorkSection />
     </main>
   );
 }
