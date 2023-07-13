@@ -38,14 +38,10 @@ export default function Navbar({ aboutMeRef }: NavbarProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollPosition]);
 
-  const funcTeste = () => {
-    console.log(`DEVE LEVAR À SEÇÃO DE CONTATO`);
-  };
-
   return (
     <nav className={`${styles.main} ${hasHeroPassed && styles.glossy} `}>
       <div className={styles["left-links"]}>
-        <Link to='about' smooth={true} duration={scrollDuration}>
+        <Link to='about' smooth={true} offset={1} duration={scrollDuration}>
           About
         </Link>
         <Link to='work' smooth={true} duration={scrollDuration}>
@@ -62,7 +58,9 @@ export default function Navbar({ aboutMeRef }: NavbarProps) {
           />
         </Link>
       </div>
-      <Button text='Hit me up!' clickFunction={funcTeste} />
+      <Link to='contact' smooth={true} duration={scrollDuration}>
+        <Button text='Hit me up!' />
+      </Link>
     </nav>
   );
 }

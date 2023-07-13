@@ -44,6 +44,8 @@
   /* --primary-color: #98fb98; */
   --primary-color: #6495ed;
   /* --primary-color: #ff4081; */
+  --secondary-color: #ff2b2b;
+  --grey: #a8a8a8;
 }
 
 ::selection {

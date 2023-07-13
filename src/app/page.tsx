@@ -5,6 +5,7 @@ import {
   HeroSection,
   AboutMeSection,
   WorkSection,
+  ContactSection,
 } from "../components/sections";
 import styles from "./page.module.css";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <AboutMeSection aboutMeRef={aboutMeRef} />
       <WorkSection />
+      <ContactSection />
     </main>
   );
 }

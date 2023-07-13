@@ -34,11 +34,14 @@ export default function AboutMeSection({ aboutMeRef }: AboutMeProps) {
         <span className={styles.heading}>
           <AnimatedHeading headings={headings} />
         </span>
-        <p>
-          I am Gustavo, a passionate freelancer bringing you programming and
-          design from the future. My expertise is developing next-level websites
-          and web applications including full frontend design.
-        </p>
+        <span className={styles.description}>
+          I am Gustavo, a passionate freelancer bringing you{" "}
+          <span className={styles.white}>
+            programming and design from the future
+          </span>
+          . My expertise is developing next-level websites and web applications
+          including full frontend design.
+        </span>
       </div>
     </section>
   );

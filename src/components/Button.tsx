@@ -3,7 +3,7 @@ import styles from "./Button.module.css";
 
 interface ButtonProps {
   text: string;
-  clickFunction: () => void;
+  clickFunction?: () => void;
   style?: string;
 }
 
