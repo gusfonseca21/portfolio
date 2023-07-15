@@ -1,0 +1,47 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input {
+  padding: 0.8rem 0.5rem;
+  background-color: var(--main-color-light);
+  border: 1px solid #ffffff2b;
+  transition: all 120ms ease-in-out;
+}
+
+.input:focus {
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 1px var(--primary-color), 0 0 1px var(--primary-color),
+    0 0 7px var(--primary-color), inset 0 0 7px var(--primary-color);
+}
+
+.input-div span {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  color: var(--main-color);
+  background-color: #fff;
+}
+
+.button::before {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+.button:hover {
+  color: #fff;
+}
