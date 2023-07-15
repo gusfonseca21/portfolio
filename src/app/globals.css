@@ -47,6 +47,7 @@
   /* --primary-color: #ff4081; */
   --secondary-color: #ff2b2b;
   --grey: #a8a8a8;
+  --error: rgb(255, 46, 91);
 }
 
 ::selection {

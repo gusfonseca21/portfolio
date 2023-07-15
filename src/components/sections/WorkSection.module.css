@@ -16,6 +16,7 @@
   align-items: center;
   position: relative;
   cursor: grab;
+  user-select: none;
 }
 
 .project-slider:active {

@@ -12,7 +12,7 @@ import { ToastContainer, ToastContainerProps, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
 const toastProps: ToastContainerProps = {
-  position: "top-center",
+  position: "bottom-center",
   closeButton: false,
   transition: Slide,
   hideProgressBar: true,

@@ -19,6 +19,14 @@ export default async function handler(
       },
     });
 
+    if (
+      req.body.name.trim() === "" ||
+      req.body.email.trim() === "" ||
+      req.body.message.trim() === ""
+    ) {
+      throw new Error("Os dados do email não foram preenchidos corretamente");
+    }
+
     const mailOptions = {
       from: `${req.body.name} <${req.body.email}>`,
       to: "gusfonseca.dev@gmail.com",
@@ -26,9 +34,7 @@ export default async function handler(
       text: req.body.message,
     };
 
-    const emailRes = await transporter.sendMail(mailOptions);
-
-    console.log(emailRes);
+    await transporter.sendMail(mailOptions);
 
     res.status(200).json({ submitted: true });
   } catch (err: any) {

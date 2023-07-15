@@ -6,6 +6,8 @@
   font-size: 1rem;
   cursor: pointer;
   transform: skew(360deg);
+  transition: all 150ms ease-out;
+  user-select: none;
 }
 
 .button::before {
@@ -29,4 +31,8 @@
   left: 0;
   right: 0;
   opacity: 1;
+}
+
+.click {
+  transform: scale(0.98);
 }

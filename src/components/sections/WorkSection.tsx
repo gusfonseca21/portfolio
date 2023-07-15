@@ -70,7 +70,11 @@ export default function WorkSection() {
       <span className='section-heading'>
         <h2>Dig into my universe</h2>
       </span>
-      <div className={styles["project-slider"]} ref={sliderRef}>
+      <div
+        className={styles["project-slider"]}
+        draggable={false}
+        ref={sliderRef}
+      >
         {projects.map((project, index) => {
           const formattedDate = formatDate(project.date);
           return (

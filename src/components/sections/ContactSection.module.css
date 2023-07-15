@@ -10,7 +10,7 @@
   align-items: center;
   max-width: 80rem;
   width: 100%;
-  padding: 0 3rem 0 3rem;
+  gap: 5rem;
 }
 
 .left-box {
