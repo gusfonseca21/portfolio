@@ -1,0 +1,80 @@
+.main {
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-color);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 80rem;
+  width: 100%;
+  gap: 5rem;
+}
+
+.left-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.subheading {
+  font-size: 1rem;
+  color: var(--grey);
+  line-height: 25px;
+  margin-top: 0.8rem;
+}
+
+.email {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.3rem;
+  position: relative;
+}
+
+.email span {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  transition: color 200ms;
+}
+
+.email-icon {
+  fill: #fff;
+  transition: fill 200ms;
+}
+
+.email:hover .email-icon,
+.email:hover {
+  fill: var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.copied {
+  position: absolute;
+  right: -45%;
+}
+
+.copied {
+  pointer-events: none;
+}
+
+.copied span {
+  border-radius: 4px;
+  color: #fff;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+}
+
+.right-box {
+  width: 100%;
+  padding: 1rem;
+}

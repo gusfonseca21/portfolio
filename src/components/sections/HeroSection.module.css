@@ -34,6 +34,10 @@
   color: #fff;
 }
 
+.heading-button:hover:active {
+  transform: scale(0.95);
+}
+
 .heading-button::before {
   background: var(--main-color);
 }

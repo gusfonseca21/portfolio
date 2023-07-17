@@ -1,0 +1,81 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.input {
+  padding: 0.8rem 0.5rem;
+  background-color: var(--main-color-light);
+  border: 1px solid #ffffff2b;
+  transition: all 120ms ease-in-out;
+}
+
+.input:focus {
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 1px var(--primary-color), 0 0 1px var(--primary-color),
+    0 0 7px var(--primary-color), inset 0 0 7px var(--primary-color);
+}
+
+.input::placeholder {
+  color: var(--error);
+}
+
+.input-div span {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.input-div textarea {
+  height: 200px;
+}
+
+.button {
+  display: flex;
+  font-weight: 500;
+  font-size: 1.1rem;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  color: var(--main-color);
+  background-color: #fff;
+}
+
+.button::before {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+.button:hover {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.error {
+  border: 1px solid var(--error);
+}
+
+.attention-icon {
+  position: absolute;
+  left: -5.5%;
+  bottom: 20%;
+  color: var(--error);
+}
+
+.attention-icon {
+  position: absolute;
+  left: -5.5%;
+  bottom: 20%;
+  color: var(--error);
+}
+
+.message-input {
+  bottom: 75%;
+}

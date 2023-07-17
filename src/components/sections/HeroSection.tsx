@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./HeroSection.module.css";
 import Background from "../ui/Background";
 import Button from "../Button";
+import { Link } from "react-scroll";
 
 export default function HeroSection() {
   return (
@@ -13,11 +14,12 @@ export default function HeroSection() {
           <br /> and Design
           <br /> from the Future
         </h1>
-        <Button
-          text='Dig into my universe'
-          clickFunction={() => console.log(`DEVE FAZER ALGO`)}
-          style={styles["heading-button"]}
-        />
+        <Link to='work' smooth={true} duration={1000}>
+          <Button
+            text='Dig into my universe'
+            style={styles["heading-button"]}
+          />
+        </Link>
       </div>
     </section>
   );
