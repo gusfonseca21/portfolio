@@ -21,6 +21,7 @@ const toastProps: ToastContainerProps = {
   closeOnClick: false,
   draggable: false,
   theme: "dark",
+  toastClassName: styles.toast,
 };
 
 export default function Home() {

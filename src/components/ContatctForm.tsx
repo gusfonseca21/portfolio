@@ -57,13 +57,13 @@ export default function ContactForm() {
 
     if (res.ok) {
       setIsLoading(false);
-      toast.success("Email enviado com sucesso!");
+      toast.success("Email enviado com sucesso");
       setName("");
       setEmail("");
       setMessage("");
     } else {
       setIsLoading(false);
-      toast.error("Houve um erro ao enviar o email!");
+      toast.error("Houve um erro ao enviar o email");
     }
   };
 
