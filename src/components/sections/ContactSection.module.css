@@ -21,13 +21,6 @@
   gap: 1.5rem;
 }
 
-.subheading {
-  font-size: 1rem;
-  color: var(--grey);
-  line-height: 25px;
-  margin-top: 0.8rem;
-}
-
 .email {
   width: fit-content;
   display: flex;
@@ -46,7 +39,7 @@
 }
 
 .email-icon {
-  fill: #fff;
+  fill: var(--white);
   transition: fill 200ms;
 }
 
@@ -68,7 +61,7 @@
 
 .copied span {
   border-radius: 4px;
-  color: #fff;
+  color: var(--white);
   background-color: var(--primary-color);
   font-weight: bold;
   padding: 0.4rem 0.6rem;

@@ -24,6 +24,13 @@
   text-shadow: none;
 }
 
+.name {
+  text-transform: uppercase;
+  font-weight: 600;
+  user-select: none;
+  cursor: pointer;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -54,7 +61,7 @@
   left: 0;
   width: 100%;
   height: 0.5px;
-  background-image: radial-gradient(#fff, #00000000);
+  background-image: radial-gradient(var(--white), #00000000);
   opacity: 0;
   transition: opacity 300ms, transform 300ms;
 }
@@ -75,4 +82,11 @@
 .left-links a:hover::after,
 .left-links a:focus::after {
   transform: scale(0.99);
+}
+
+.button {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--white);
 }

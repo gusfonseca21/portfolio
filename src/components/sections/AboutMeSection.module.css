@@ -30,6 +30,6 @@
 }
 
 .description .white {
-  color: #fff;
+  color: var(--white);
   width: 20%;
 }
