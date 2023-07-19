@@ -34,10 +34,17 @@ export default function Footer() {
       </div>
       <div className={styles["social"]}>
         <div className={styles.hitbox}>
-          <GithubIcon />
+          <a href='https://github.com/gusfonseca21' target='_blank'>
+            <GithubIcon />
+          </a>
         </div>
         <div className={styles.hitbox}>
-          <LinkedinIcon />
+          <a
+            href='https://www.linkedin.com/in/gustavo-fonseca-38b736248/'
+            target='_blank'
+          >
+            <LinkedinIcon />
+          </a>
         </div>
       </div>
     </footer>
