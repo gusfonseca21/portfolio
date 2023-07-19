@@ -36,7 +36,7 @@ export default function AboutMeSection({ aboutMeRef }: AboutMeProps) {
         </span>
         <span className={styles.description}>
           I am Gustavo, a passionate freelancer bringing you{" "}
-          <span className={styles.white}>
+          <span className='white-text'>
             programming and design from the future
           </span>
           . My expertise is developing next-level websites and web applications

@@ -22,7 +22,7 @@ export default function ContactSection() {
           <span className='section-title'>Contact</span>
           <span className='section-heading'>
             <h2>Got a problem to solve?</h2>
-            <p className={styles.subheading}>
+            <p className='subheading'>
               Get your space suit ready and tell me your ideas to develop your
               dream website.
             </p>

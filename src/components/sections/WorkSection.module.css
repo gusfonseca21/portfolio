@@ -68,5 +68,5 @@
 .slider-fill {
   height: 100%;
   max-width: 100%;
-  background-image: radial-gradient(#ffffff, rgba(255, 255, 255, 0.11));
+  background-image: radial-gradient(var(--white), rgba(255, 255, 255, 0.11));
 }

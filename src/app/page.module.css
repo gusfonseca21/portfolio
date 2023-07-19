@@ -12,5 +12,5 @@
 
 .toast {
   background-color: var(--main-color-light);
-  border: 1px solid #ffffff1f;
+  border: 1px solid var(--white-alpha);
 }

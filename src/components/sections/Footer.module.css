@@ -1,0 +1,99 @@
+.main {
+  height: 50vh;
+  width: 100%;
+  background-color: var(--main-color);
+  z-index: 10;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.main::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-image: radial-gradient(
+    var(--white-alpha),
+    rgba(255, 255, 255, 0.11)
+  );
+  position: absolute;
+  top: 0;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  height: 8rem;
+  width: 100%;
+}
+
+.links::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-image: radial-gradient(
+    closest-side,
+    var(--white-alpha),
+    var(--main-color)
+  );
+  position: absolute;
+  top: 0;
+}
+
+.links::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-image: radial-gradient(
+    closest-side,
+    var(--white-alpha),
+    var(--main-color)
+  );
+  position: absolute;
+  bottom: 0;
+}
+
+.link {
+  text-transform: uppercase;
+  color: var(--white-alpha-text);
+}
+
+.link,
+.social-icon {
+  transition: all 150ms ease-in-out;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: var(--white);
+}
+
+.social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hitbox,
+.social-icon {
+  cursor: pointer;
+  fill: var(--white-alpha-text);
+}
+
+.social .hitbox:hover .social-icon {
+  fill: var(--white);
+  cursor: pointer;
+}
