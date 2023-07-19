@@ -3,7 +3,6 @@ import useBodyLock from "@/hooks/useBodyLock";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styles from "./LoadingScreen.module.css";
-document.body.style.position = "fixed";
 
 function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
