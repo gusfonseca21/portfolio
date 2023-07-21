@@ -10,10 +10,10 @@ import { projectData } from "@/project-data";
 import HeroProject from "./components/sections/HeroProject";
 import Image from "next/image";
 import RelatedProjects from "./components/sections/RelatedProjects";
+import GoBackButton from "./components/ui/GoBackButton";
+import { Footer } from "@/components/sections";
 
 const inter = Inter({ subsets: ["latin"] });
-
-console.log(`teste`);
 
 export default function ProjectPage() {
   const router = useRouter();
@@ -31,27 +31,31 @@ export default function ProjectPage() {
   );
 
   return (
-    <main className={`${styles.main} ${inter.className}`}>
+    <>
       <LoadingScreen />
-      <Navbar />
-      <HeroProject {...selectedProject} />
-      <div className={styles["example-images"]}>
-        {selectedProject.exampleImages.map((image, index) => {
-          return (
-            <Image
-              key={index}
-              src={image}
-              height={500}
-              width={500}
-              className={styles.image}
-              alt={image}
-              unoptimized
-              priority
-            />
-          );
-        })}
-      </div>
-      <RelatedProjects projects={relatedProjects} />
-    </main>
+      <Navbar navStyle={true} />
+      <main className={`${styles.main} ${inter.className}`}>
+        <HeroProject {...selectedProject} />
+        <div className={styles["example-images"]}>
+          {selectedProject.exampleImages.map((image, index) => {
+            return (
+              <Image
+                key={index}
+                src={image}
+                height={500}
+                width={500}
+                className={styles.image}
+                alt={image}
+                unoptimized
+                priority
+              />
+            );
+          })}
+        </div>
+        <RelatedProjects projects={relatedProjects} />
+        <GoBackButton className={styles["go-back-btn"]} />
+      </main>
+      <Footer />
+    </>
   );
 }

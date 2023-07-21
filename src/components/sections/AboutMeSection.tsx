@@ -13,13 +13,9 @@ const headings = [
   "Globetrotter",
 ];
 
-interface AboutMeProps {
-  aboutMeRef: React.RefObject<HTMLElement>;
-}
-
-export default function AboutMeSection({ aboutMeRef }: AboutMeProps) {
+export default function AboutMeSection() {
   return (
-    <section id='about' className={styles.main} ref={aboutMeRef}>
+    <section id='about' className={styles.main}>
       <Image
         draggable={false}
         className={styles.meImage}

@@ -1,8 +1,8 @@
 .main {
   background-color: var(--main-color);
-  /* z-index: 30; */
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .example-images {
@@ -10,7 +10,6 @@
   flex-direction: column;
   width: 100%;
   height: max-content;
-  /* padding: 0 22%; */
 }
 
 .image {
@@ -19,4 +18,10 @@
   width: 100%;
   background-position: center;
   background-size: 130%;
+}
+
+.go-back-btn {
+  top: 98.5% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }

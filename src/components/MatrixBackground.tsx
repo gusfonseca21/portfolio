@@ -1,5 +1,6 @@
+"use client";
 import { useReducedMotion } from "framer-motion";
-import { ReactNode, useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styles from "./sections/SourceCodeSection.module.css";
 
 const TEXT_COLOR = "#6495ed";

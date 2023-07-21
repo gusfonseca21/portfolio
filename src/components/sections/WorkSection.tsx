@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useMemo, useState } from "react";
 import styles from "./WorkSection.module.css";
 import { useKeenSlider } from "keen-slider/react";
@@ -51,7 +52,7 @@ export default function WorkSection() {
               key={project.id}
             >
               <div
-                onMouseOver={() => setImageHovered(project.id)}
+                onMouseEnter={() => setImageHovered(project.id)}
                 onMouseLeave={() => setImageHovered(null)}
                 className={`keen-slider__slide ${styles["project-image-div"]}`}
                 draggable={false}

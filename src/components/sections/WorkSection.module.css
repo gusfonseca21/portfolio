@@ -52,7 +52,8 @@
 
 .project-image-div:hover .project-image {
   scale: 1.05;
-  filter: brightness(0.6) blur(4px);
+  filter: brightness(0.3);
+  /* filter: brightness(0.6) blur(4px); */
 }
 
 .slider-feedback {

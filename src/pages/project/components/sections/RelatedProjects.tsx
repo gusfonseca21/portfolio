@@ -4,15 +4,12 @@ import { projectDataProps } from "@/project-data";
 import Image from "next/image";
 import { formatDate } from "@/helper/formatDate";
 import Link from "next/link";
-import { scrollToTop } from "@/helper/scrollToTop";
-import { useRouter } from "next/navigation";
 
 export default function RelatedProjects({
   projects,
 }: {
   projects: projectDataProps[];
 }) {
-  const router = useRouter();
   return (
     <section className={styles.main}>
       <div className={styles["section-heading"]}>
@@ -25,13 +22,10 @@ export default function RelatedProjects({
         {projects.map((project, index) => {
           if (index <= 1) {
             return (
-              <div
+              <Link
                 key={project.id}
-                // href={`/project/${project.title.toLowerCase()}`}
+                href={`/project/${project.title.toLowerCase()}/#hero`}
                 className={styles["other-project"]}
-                onClick={() => {
-                  router.push(`/project/${project.title.toLowerCase()}`);
-                }}
               >
                 <Image
                   key={project.id}
@@ -61,7 +55,7 @@ export default function RelatedProjects({
                     {project.description}
                   </span>
                 </div>
-              </div>
+              </Link>
             );
           }
         })}

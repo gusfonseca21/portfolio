@@ -42,7 +42,6 @@ export const projectData: projectDataProps[] = [
     exampleImages: [
       "/images/projects/lockey/lockey-example-1.gif",
       "/images/projects/lockey/lockey-example-2.webp",
-      "/images/projects/lockey/lockey-example-3.webp",
     ],
     projectLink: "https://lockey.lokkeestudios.com/",
     openSourceLink: "https://github.com/lokkeestudios/lockey",

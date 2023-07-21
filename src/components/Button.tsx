@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styles from "./Button.module.css";
 import Loading from "./ui/Loading";

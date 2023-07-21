@@ -31,14 +31,16 @@ export default function HeroProject({
   openSourceLink,
 }: HeroProjectProps) {
   return (
-    <section className={styles.main}>
+    <section id='hero' className={styles.main}>
       <GoBackButton />
       <div className={styles["image-overlay"]}>
-        <div
+        <Image
+          src={headImage}
+          height={500}
+          width={500}
+          alt={title}
+          unoptimized
           className={styles["head-image"]}
-          style={{
-            backgroundImage: `url(${headImage})`,
-          }}
         />
       </div>
       <div className={styles.content}>

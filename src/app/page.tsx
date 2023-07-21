@@ -28,18 +28,45 @@ const toastProps: ToastContainerProps = {
 };
 
 export default function Home() {
-  const aboutMeRef = useRef(null);
+  const [heroRef, setHeroRef] = useState<React.RefObject<HTMLElement> | null>(
+    null
+  );
+  const [navStyle, setNavStyle] = useState(false);
+
+  const heroSectionRef = useRef(null);
+
+  useEffect(() => {
+    setHeroRef(heroRef);
+  }, [heroRef]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        setNavStyle(!entry.isIntersecting);
+      });
+    });
+    if (heroSectionRef.current) {
+      observer.observe(heroSectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <main className={styles.main}>
+    <>
       <LoadingScreen />
-      <ToastContainer {...toastProps} />
-      <Navbar aboutMeRef={aboutMeRef} />
-      <HeroSection />
-      <AboutMeSection aboutMeRef={aboutMeRef} />
-      <WorkSection />
-      <ContactSection />
-      <SourceCodeSection />
+      <Navbar navStyle={navStyle} />
+      <main className={styles.main}>
+        <ToastContainer {...toastProps} />
+        <HeroSection heroRef={heroSectionRef} />
+        <AboutMeSection />
+        <WorkSection />
+        <ContactSection />
+        <SourceCodeSection />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

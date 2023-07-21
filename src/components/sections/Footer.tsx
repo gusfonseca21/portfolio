@@ -2,17 +2,23 @@ import React from "react";
 import styles from "./Footer.module.css";
 import TagIcon from "../icons/TagIcon";
 import { scrollToTop } from "@/helper/scrollToTop";
-import { Link } from "react-scroll";
 import GithubIcon from "../icons/GithubIcon";
 import LinkedinIcon from "../icons/LinkedinIcon";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const sections = ["about", "work", "contact", "source"];
 
 export default function Footer() {
-  const scrollDuration = 1000;
+  const pathName = usePathname();
+
+  const initialPage = pathName === "/";
 
   return (
-    <footer className={styles.main}>
+    <footer className={`${inter.className} ${styles.main} `}>
       <div className={styles.logo} onClick={scrollToTop}>
         <TagIcon />
       </div>
@@ -21,10 +27,7 @@ export default function Footer() {
           return (
             <Link
               key={section}
-              to={section}
-              smooth={true}
-              offset={1}
-              duration={scrollDuration}
+              href={initialPage ? `#${section}` : `/#${section}`}
               className={styles.link}
             >
               {section !== "source" ? section : "Source Code"}

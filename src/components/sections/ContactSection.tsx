@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./ContactSection.module.css";
 import EmailIcon from "../icons/EmailIcon";
