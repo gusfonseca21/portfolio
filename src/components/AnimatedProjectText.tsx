@@ -1,20 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./AnimatedProjectText.module.css";
+import { projectDataProps } from "@/project-data";
 
 interface AnimatedProjectProps {
-  projectIndex: null | number;
-  projectObj: {
-    name: string;
-    date: string;
-    subheader: string;
-    index: number;
-  };
+  projectObj: projectDataProps;
+  projectIndex: number | null;
 }
 
 export default function AnimatedProjectText({
-  projectIndex,
   projectObj,
+  projectIndex,
 }: AnimatedProjectProps) {
   const textMotion = {
     hidden: {
@@ -27,6 +23,8 @@ export default function AnimatedProjectText({
     },
   };
 
+  const { id, title, tags, headImage } = projectObj;
+
   return (
     <div className={styles["text-div"]}>
       <span draggable={false} className={styles.container}>
@@ -34,28 +32,28 @@ export default function AnimatedProjectText({
           draggable={false}
           className={styles["project-date"]}
           variants={textMotion}
-          animate={projectIndex === projectObj.index ? "visible" : "hidden"}
+          animate={projectIndex === id ? "visible" : "hidden"}
         >
           {projectObj.date}
         </motion.span>
       </span>
       <span className={styles.container}>
         <motion.span
-          className={styles["project-name"]}
+          className={styles["project-title"]}
           variants={textMotion}
-          animate={projectIndex === projectObj.index ? "visible" : "hidden"}
+          animate={projectIndex === id ? "visible" : "hidden"}
         >
-          {projectObj.name}
+          {title}
         </motion.span>
       </span>
       <span className={styles.container}>
         <motion.span
           draggable={false}
-          className={styles["project-subheader"]}
+          className={styles["project-tags"]}
           variants={textMotion}
-          animate={projectIndex === projectObj.index ? "visible" : "hidden"}
+          animate={projectIndex === id ? "visible" : "hidden"}
         >
-          {projectObj.subheader}
+          {...tags}
         </motion.span>
       </span>
     </div>

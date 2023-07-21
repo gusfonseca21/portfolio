@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  top: 14%;
+  left: 4%;
+  z-index: 50;
+}
+
+.main:hover {
+  cursor: pointer;
+  color: var(--grey);
+}
+
+.icon {
+  fill: var(--white);
+  stroke: var(--white);
+  transition: all 200ms ease-out;
+}
+
+.main:hover .icon {
+  fill: var(--grey);
+  stroke: var(--grey);
+  transform: translateX(-10%);
+}

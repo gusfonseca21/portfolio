@@ -9,7 +9,7 @@ import { scrollToTop } from "@/helper/scrollToTop";
 const scrollDuration = 1000;
 
 interface NavbarProps {
-  aboutMeRef: React.RefObject<HTMLElement>;
+  aboutMeRef?: React.RefObject<HTMLElement>;
 }
 
 export default function Navbar({ aboutMeRef }: NavbarProps) {
@@ -29,12 +29,14 @@ export default function Navbar({ aboutMeRef }: NavbarProps) {
   }, []);
 
   useEffect(() => {
-    if (aboutMeRef.current) {
+    if (aboutMeRef?.current) {
       if (scrollPosition >= aboutMeRef.current?.offsetTop - 5) {
         setHasHeroPassed(true);
       } else {
         setHasHeroPassed(false);
       }
+    } else {
+      setHasHeroPassed(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollPosition]);

@@ -1,0 +1,22 @@
+.main {
+  background-color: var(--main-color);
+  /* z-index: 30; */
+  height: 100%;
+  width: 100%;
+}
+
+.example-images {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+  /* padding: 0 22%; */
+}
+
+.image {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: 130%;
+}

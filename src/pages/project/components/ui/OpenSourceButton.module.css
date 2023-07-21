@@ -1,0 +1,18 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+}
+
+.icon {
+  fill: var(--white) !important;
+  height: 22px;
+  width: 22px;
+}
+
+.button:hover .icon {
+  fill: var(--main-color) !important;
+}

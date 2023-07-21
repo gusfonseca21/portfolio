@@ -43,7 +43,9 @@
 }
 
 .project-image {
-  object-position: center -200px;
+  height: auto;
+  width: auto;
+  /* object-position: center; */
   object-fit: contain;
   transition: scale 800ms ease-in-out, filter 300ms ease-in-out;
 }

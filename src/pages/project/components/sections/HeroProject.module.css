@@ -1,0 +1,126 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 0 20%;
+}
+
+.image-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.image-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--main-color-alpha) 20%,
+    var(--main-color) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.head-image {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: 130%;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0.7rem;
+  height: 100%;
+  z-index: 10;
+  padding: 7rem 3rem;
+}
+
+.date {
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.description {
+  max-width: 60%;
+  color: var(--grey);
+  line-height: 25px;
+}
+
+.tags {
+  width: 100%;
+  margin: 2rem 0rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.tags::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--white-alpha-text),
+    var(--main-color)
+  );
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+}
+
+.tag {
+  font-size: 0.9rem;
+}
+
+.tag::after {
+  content: ",";
+}
+
+.tag:last-child::after {
+  content: "";
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.down-icon {
+  position: absolute;
+  bottom: 1.5%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  animation: bounce 1.5s infinite;
+  height: 32px;
+  width: 32px;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%) translateY(-20px);
+  }
+}
