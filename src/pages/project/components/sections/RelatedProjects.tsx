@@ -10,6 +10,7 @@ export default function RelatedProjects({
 }: {
   projects: projectDataProps[];
 }) {
+  if (!projects) return;
   return (
     <section className={styles.main}>
       <div className={styles["section-heading"]}>
