@@ -1,25 +1,13 @@
 import React from "react";
 import styles from "./HeroProject.module.css";
 import Image from "next/image";
-import { Buttons } from "@/project-data";
+import { Buttons, projectDataProps } from "@/project-data";
 
 import { formatDate } from "@/helper/formatDate";
 import GoBackButton from "../ui/GoBackButton";
 import ViewProjectButton from "../ui/ViewProjectButton";
 import DownArrowIcon from "../icons/DownArrowIcon";
 import OpenSourceButton from "../ui/OpenSourceButton";
-
-interface HeroProjectProps {
-  id: number;
-  title: string;
-  date: string;
-  description: string;
-  tags: string[];
-  buttons: Buttons[];
-  headImage: string;
-  projectLink: string;
-  openSourceLink?: string;
-}
 
 export default function HeroProject({
   title,
@@ -29,7 +17,9 @@ export default function HeroProject({
   tags,
   projectLink,
   openSourceLink,
-}: HeroProjectProps) {
+}: projectDataProps) {
+  if (!title) return;
+
   return (
     <section id='hero' className={styles.main}>
       <GoBackButton />
