@@ -43,14 +43,17 @@
 }
 
 .project-image {
-  object-position: center -200px;
+  height: auto;
+  width: auto;
+  /* object-position: center; */
   object-fit: contain;
   transition: scale 800ms ease-in-out, filter 300ms ease-in-out;
 }
 
 .project-image-div:hover .project-image {
   scale: 1.05;
-  filter: brightness(0.6) blur(4px);
+  filter: brightness(0.3);
+  /* filter: brightness(0.6) blur(4px); */
 }
 
 .slider-feedback {

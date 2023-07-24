@@ -1,33 +1,13 @@
+"use client";
 import React, { useEffect, useMemo, useState } from "react";
 import styles from "./WorkSection.module.css";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import mockProject1 from ".././../../public/images/project-mock-1.jpg";
-import mockProject2 from ".././../../public/images/project-mock-2.jpg";
-import mockProject3 from ".././../../public/images/project-mock-3.jpg";
 import Image from "next/image";
 import AnimatedProjectText from "../AnimatedProjectText";
-
-const projects = [
-  {
-    image: mockProject1,
-    date: new Date(),
-    name: "Contentary",
-    subheader: "Website",
-  },
-  {
-    image: mockProject2,
-    date: new Date(),
-    name: "Nullpunkt",
-    subheader: "Website, Shopify",
-  },
-  {
-    image: mockProject3,
-    date: new Date(),
-    name: "WeatherWorks",
-    subheader: "Website, Web-app, Open-source",
-  },
-];
+import Link from "next/link";
+import { projectData } from "@/project-data";
+import { formatDate } from "@/helper/formatDate";
 
 export default function WorkSection() {
   const [sliderProgress, setSliderProgress] = useState(0);
@@ -53,17 +33,6 @@ export default function WorkSection() {
     width: `${sliderProgress < 0 ? 0 : (sliderProgress / 0.8814) * 100}%`,
   };
 
-  const formatDate = (date: Date) => {
-    const newDate = new Date();
-
-    const formatter = new Intl.DateTimeFormat("pt-BR", {
-      month: "long",
-      year: "numeric",
-    });
-
-    return formatter.format(newDate);
-  };
-
   return (
     <section id='work' className={styles.main}>
       <span className='section-title'>Work</span>
@@ -75,30 +44,34 @@ export default function WorkSection() {
         draggable={false}
         ref={sliderRef}
       >
-        {projects.map((project, index) => {
+        {projectData.map((project) => {
           const formattedDate = formatDate(project.date);
           return (
-            <div
-              key={project.name}
-              onMouseOver={() => setImageHovered(index)}
-              onMouseLeave={() => setImageHovered(null)}
-              className={`keen-slider__slide ${styles["project-image-div"]}`}
-              draggable={false}
+            <Link
+              href={`/project/${project.title.toLowerCase()}`}
+              key={project.id}
             >
-              <AnimatedProjectText
-                projectIndex={imageHovered}
-                projectObj={{ ...project, date: formattedDate, index }}
-              />
-              <Image
+              <div
+                onMouseEnter={() => setImageHovered(project.id)}
+                onMouseLeave={() => setImageHovered(null)}
+                className={`keen-slider__slide ${styles["project-image-div"]}`}
                 draggable={false}
-                src={project.image}
-                alt={project.name}
-                width={2000}
-                height={1000}
-                className={styles["project-image"]}
-                style={imagePosition}
-              />
-            </div>
+              >
+                <AnimatedProjectText
+                  projectIndex={imageHovered}
+                  projectObj={{ ...project, date: formattedDate }}
+                />
+                <Image
+                  draggable={false}
+                  src={project.headImage}
+                  alt={project.title}
+                  width={500}
+                  height={500}
+                  className={styles["project-image"]}
+                  style={imagePosition}
+                />
+              </div>
+            </Link>
           );
         })}
         <div className={styles["slider-feedback"]}>

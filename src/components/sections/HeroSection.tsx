@@ -2,24 +2,30 @@ import React from "react";
 import styles from "./HeroSection.module.css";
 import Background from "../ui/Background";
 import Button from "../Button";
-import { Link } from "react-scroll";
+import Link from "next/link";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  heroRef: React.RefObject<HTMLElement>;
+}
+
+export default function HeroSection({ heroRef }: HeroSectionProps) {
   return (
-    <section id='hero' className={styles.main}>
-      <Background />
-      <div className={styles.heading}>
-        <h1>
-          Programming
-          <br /> and Design
-          <br /> from the Future
-        </h1>
-        <Link to='work' smooth={true} duration={1000}>
-          <Button
-            text='Dig into my universe'
-            style={styles["heading-button"]}
-          />
-        </Link>
+    <section id='hero' ref={heroRef}>
+      <div className={styles.main}>
+        <Background />
+        <div className={styles.heading}>
+          <h1>
+            Programming
+            <br /> and Design
+            <br /> from the Future
+          </h1>
+          <Link href='#work'>
+            <Button
+              text='Dig into my universe'
+              style={styles["heading-button"]}
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );

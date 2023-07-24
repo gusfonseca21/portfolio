@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  background-color: var(--white);
+  color: var(--main-color);
+}
+
+.button::before {
+  background-color: var(--main-color);
+}
+
+.icon {
+  fill: var(--main-color);
+  height: 22px;
+  width: 22px;
+}
+
+.button:hover .icon {
+  fill: var(--white);
+}
+
+.button:hover {
+  color: var(--white);
+}

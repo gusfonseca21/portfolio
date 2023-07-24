@@ -1,0 +1,27 @@
+.main {
+  background-color: var(--main-color);
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.example-images {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+}
+
+.image {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: 130%;
+}
+
+.go-back-btn {
+  top: 98.5% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styles from "./Button.module.css";
 import Loading from "./ui/Loading";
@@ -8,6 +9,8 @@ interface ButtonProps {
   clickAnimation?: boolean;
   style?: string;
   loading?: boolean;
+  iconBefore?: JSX.Element;
+  iconAfter?: JSX.Element;
 }
 
 export default function Button({
@@ -15,6 +18,8 @@ export default function Button({
   clickFunction,
   style = "",
   loading,
+  iconBefore,
+  iconAfter,
 }: ButtonProps) {
   const [isClicked, setIsClicked] = useState(false);
 
@@ -33,7 +38,13 @@ export default function Button({
       className={`${styles.button} ${style} ${isClicked ? styles.click : ""}`}
       onClick={clickHandler}
     >
-      {!loading ? text : <Loading />}
+      {!loading ? (
+        <>
+          {iconBefore} {text} {iconAfter}
+        </>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }

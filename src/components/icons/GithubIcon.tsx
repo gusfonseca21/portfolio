@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "../sections/Footer.module.css";
 
-export default function GithubIcon() {
+interface GithubIconProps {
+  className?: string;
+}
+
+export default function GithubIcon({ className }: GithubIconProps) {
   return (
     <svg
       width='24px'
@@ -31,7 +35,7 @@ export default function GithubIcon() {
             id='Dribbble-Light-Preview'
             transform='translate(-140.000000, -7559.000000)'
             fill='#ffffff9e'
-            className={styles["social-icon"]}
+            className={`${styles["social-icon"]} ${className}`}
           >
             <g id='icons' transform='translate(56.000000, 160.000000)'>
               <path

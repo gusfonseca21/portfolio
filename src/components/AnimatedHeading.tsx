@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import usePreviousState from "@/hooks/usePreviousState";
