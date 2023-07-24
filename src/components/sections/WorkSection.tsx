@@ -50,27 +50,25 @@ export default function WorkSection() {
             <Link
               href={`/project/${project.title.toLowerCase()}`}
               key={project.id}
+              onMouseEnter={() => setImageHovered(project.id)}
+              onMouseLeave={() => setImageHovered(null)}
+              className={`keen-slider__slide ${styles["project-image-div"]}`}
+              draggable={false}
             >
-              <div
-                onMouseEnter={() => setImageHovered(project.id)}
-                onMouseLeave={() => setImageHovered(null)}
-                className={`keen-slider__slide ${styles["project-image-div"]}`}
+              <AnimatedProjectText
+                projectIndex={imageHovered}
+                projectObj={{ ...project, date: formattedDate }}
+              />
+              <Image
                 draggable={false}
-              >
-                <AnimatedProjectText
-                  projectIndex={imageHovered}
-                  projectObj={{ ...project, date: formattedDate }}
-                />
-                <Image
-                  draggable={false}
-                  src={project.headImage}
-                  alt={project.title}
-                  width={500}
-                  height={500}
-                  className={styles["project-image"]}
-                  style={imagePosition}
-                />
-              </div>
+                src={project.headImage}
+                alt={project.title}
+                width={500}
+                height={500}
+                className={styles["project-image"]}
+                style={imagePosition}
+                unoptimized
+              />
             </Link>
           );
         })}
