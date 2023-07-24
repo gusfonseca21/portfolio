@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ heroRef }: HeroSectionProps) {
   return (
-    <section id='hero' ref={heroRef}>
+    <section id='hero' ref={heroRef} className={styles["section-main"]}>
       <div className={styles.main}>
         <Background />
         <div className={styles.heading}>
