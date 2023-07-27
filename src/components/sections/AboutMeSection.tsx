@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./AboutMeSection.module.css";
 import Image from "next/image";
 import meImage from "../../../public/images/me.jpg";
@@ -13,7 +12,7 @@ const headings = [
   "Globetrotter",
 ];
 
-export default function AboutMeSection() {
+export default function AboutMeSection({}) {
   return (
     <section id='about' className={styles.main}>
       <Image
@@ -23,6 +22,7 @@ export default function AboutMeSection() {
         alt='Gustavo Fonseca'
         width={500}
         height={500}
+        quality={100}
       />
 
       <div className={styles.text}>

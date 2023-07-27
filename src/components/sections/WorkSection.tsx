@@ -26,7 +26,7 @@ export default function WorkSection() {
   });
 
   const imagePosition = {
-    transform: `translateX(${sliderProgress * 10}%)`,
+    transform: `translateX(${sliderProgress * 25}%)`,
   };
 
   const sliderFill = {

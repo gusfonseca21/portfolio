@@ -1,16 +1,11 @@
-import React from "react";
 import styles from "./HeroSection.module.css";
 import Background from "../ui/Background";
 import Button from "../Button";
 import Link from "next/link";
 
-interface HeroSectionProps {
-  heroRef: React.RefObject<HTMLElement>;
-}
-
-export default function HeroSection({ heroRef }: HeroSectionProps) {
+export default function HeroSection() {
   return (
-    <section id='hero' ref={heroRef} className={styles["section-main"]}>
+    <section id='hero' className={styles["section-main"]}>
       <div className={styles.main}>
         <Background />
         <div className={styles.heading}>

@@ -69,6 +69,8 @@
 html,
 body {
   scroll-behavior: smooth !important;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 body {
