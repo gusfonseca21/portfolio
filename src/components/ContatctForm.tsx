@@ -106,11 +106,13 @@ export default function ContactForm() {
           }}
           value={message}
           placeholder={messageErr ? messageErr : ""}
-          className={`${styles.input} ${messageErr ? styles.error : ""}`}
+          className={`${styles.input} ${styles["message-input"]} ${
+            messageErr ? styles.error : ""
+          }`}
         ></textarea>
         {messageErr && (
           <AttentionIcon
-            className={`${styles["attention-icon"]} ${styles["message-input"]}`}
+            className={`${styles["attention-icon"]} ${styles["message-input-error"]}`}
           />
         )}
       </div>

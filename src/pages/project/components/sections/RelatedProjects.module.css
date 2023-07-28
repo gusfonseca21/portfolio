@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1350px;
+  padding: 0 3rem;
 }
 
 .section-heading {
@@ -14,24 +16,23 @@
 }
 
 .other-projects {
+  margin-top: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
-  height: 67%;
-  /* width: 80%; */
-  padding: 2rem;
 }
 
 .other-project {
   height: 100%;
-  width: 100%;
+  width: 50%;
   background-color: var(--main-color-light);
   border-radius: 7px;
   border: 1px solid var(--white-alpha);
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   transition: all 300ms ease-in-out;
 }
 
@@ -42,15 +43,16 @@
 
 .project-image {
   width: 100%;
-  height: 60%;
+  height: 50%;
   border-radius: 7px;
+  object-fit: cover;
 }
 
 .text {
   height: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 0.3rem;
 }
@@ -74,7 +76,7 @@
 .tags {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 0.3rem;
   font-size: 0.8rem;
 }
 
@@ -84,4 +86,20 @@
 
 .tag:last-child::after {
   content: "";
+}
+
+@media (max-width: 1000px) {
+  .main {
+    width: 100%;
+    padding: 10rem 3rem;
+    height: 100%;
+  }
+  .other-projects {
+    flex-direction: column;
+    align-items: center;
+  }
+  .other-project {
+    width: 100%;
+    height: 40%;
+  }
 }

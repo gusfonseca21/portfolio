@@ -18,7 +18,6 @@ export default function Navbar({ navStyle }: NavbarProps) {
 
   const initialPage = pathName === "/";
 
-  console.log("navbarOpen", navbarOpen);
   return (
     <nav
       className={`${styles.main} ${(navStyle || navbarOpen) && styles.glossy} ${
@@ -54,7 +53,7 @@ export default function Navbar({ navStyle }: NavbarProps) {
         </Link>
       </div>
       <Link href={initialPage ? "#contact" : "/#contact"}>
-        <Button text='Hit me up!' style={styles.button} />
+        <Button text='Contato' style={styles.button} />
       </Link>
     </nav>
   );

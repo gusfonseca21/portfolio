@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .project-slider {
@@ -30,6 +30,7 @@
   overflow: hidden;
   height: 464px;
   width: 309px;
+  min-width: 200px;
   position: relative;
   transition: filter 300ms ease-in-out;
 }
@@ -72,4 +73,10 @@
   height: 100%;
   max-width: 100%;
   background-image: radial-gradient(var(--white), rgba(255, 255, 255, 0.11));
+}
+
+@media (max-width: 1000px) {
+  .slider-feedback {
+    width: 70%;
+  }
 }

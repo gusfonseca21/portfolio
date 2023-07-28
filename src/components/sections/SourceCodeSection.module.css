@@ -3,7 +3,6 @@
   justify-content: center;
   background-color: var(--main-color);
   position: relative;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -65,4 +64,10 @@
   color: var(--error);
   border: 2px solid var(--error);
   scale: 1.1;
+}
+
+@media (max-width: 1000px) {
+  .text {
+    width: 160%;
+  }
 }

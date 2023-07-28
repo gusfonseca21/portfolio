@@ -18,7 +18,7 @@ export default function WorkSection() {
     slides: {
       origin: "center",
       perView: "auto",
-      spacing: 100,
+      spacing: 50,
     },
     detailsChanged(property) {
       setSliderProgress(property.track.details.progress);
@@ -26,7 +26,7 @@ export default function WorkSection() {
   });
 
   const imagePosition = {
-    transform: `translateX(${sliderProgress * 25}%)`,
+    transform: `translateX(${sliderProgress * 10}%)`,
   };
 
   const sliderFill = {
@@ -36,9 +36,7 @@ export default function WorkSection() {
   return (
     <section id='work' className={styles.main}>
       <span className='section-title'>Work</span>
-      <span className='section-heading'>
-        <h2>Dig into my universe</h2>
-      </span>
+      <h2 className='section-heading'>Dig into my universe</h2>
       <div
         className={styles["project-slider"]}
         draggable={false}

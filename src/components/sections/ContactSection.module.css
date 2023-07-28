@@ -11,6 +11,7 @@
   max-width: 80rem;
   width: 100%;
   gap: 5rem;
+  height: 100%;
 }
 
 .left-box {
@@ -69,5 +70,21 @@
 
 .right-box {
   width: 100%;
-  padding: 1rem;
+}
+
+@media (max-width: 1400px) {
+  .main {
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main {
+    min-height: 120vh !important;
+  }
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
 }

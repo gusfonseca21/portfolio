@@ -91,7 +91,8 @@ a {
 }
 
 section {
-  height: 100vh;
+  height: 105vh;
+  height: 105dvh;
   width: 100%;
   z-index: 1;
 }
@@ -104,6 +105,7 @@ section {
 
 .section-heading {
   font-size: 2rem;
+  text-align: center;
 }
 
 .subheading {
@@ -119,6 +121,7 @@ section {
 
 section {
   height: 100vh;
+  height: 100dvh;
   width: 100%;
   z-index: 1;
 }
@@ -142,12 +145,14 @@ textarea {
   text-transform: uppercase;
 }
 
-.section-heading {
-  font-size: 2rem;
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (max-width: 400px) {
+  .section-heading {
+    font-size: 1.8rem;
   }
 }

@@ -43,7 +43,7 @@
   font-size: 1.1rem;
   justify-content: center;
   align-items: center;
-  height: 3.5rem;
+  height: 3rem;
   color: var(--main-color);
   background-color: var(--white);
 }
@@ -76,6 +76,12 @@
   color: var(--error);
 }
 
-.message-input {
+.message-input-error {
   bottom: 75%;
+}
+
+@media (max-width: 1000px) {
+  .message-input {
+    height: 50px !important;
+  }
 }

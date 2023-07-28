@@ -208,6 +208,10 @@
     width: 5rem;
     font-size: 0.8rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 }
 
