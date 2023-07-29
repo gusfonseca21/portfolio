@@ -31,20 +31,25 @@ const toastProps: ToastContainerProps = {
 export default function Home() {
   const [navStyle, setNavStyle] = useState(false);
 
+  const upperHeroRef = useRef(null);
   const separatorRef = useRef(null);
 
+  const initialIsInView = useInView(upperHeroRef);
   const isInView = useInView(separatorRef);
 
   useEffect(() => {
+    if (initialIsInView) {
+      setNavStyle(false);
+    }
     setNavStyle(!isInView);
-  }, [isInView]);
+  }, [initialIsInView, isInView]);
 
   return (
     <>
       <LoadingScreen />
       <Navbar navStyle={navStyle} />
       <main className={styles.main}>
-        <div id='hero' />
+        <div id='hero' ref={upperHeroRef} />
         <ToastContainer {...toastProps} />
         <HeroSection />
         <div ref={separatorRef} />
