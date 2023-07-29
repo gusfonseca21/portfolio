@@ -1,8 +1,7 @@
 .section-main {
   position: sticky;
   height: 100vh;
-  min-height: fill-available;
-  min-height: -webkit-fill-available;
+  height: 100dvh;
   /* height: 100dvh; */
   inset: 0;
 }
@@ -12,8 +11,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  min-height: fill-available;
-  min-height: -webkit-fill-available;
   /* height: 100dvh; */
 }
 

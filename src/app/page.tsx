@@ -46,7 +46,15 @@ export default function Home() {
       <main className={styles.main}>
         <ToastContainer {...toastProps} />
         <HeroSection />
-        <div ref={separatorRef} />
+        <div
+          ref={separatorRef}
+          style={{
+            height: 1,
+            width: "100%",
+            backgroundColor: "red",
+            zIndex: 100,
+          }}
+        />
         <AboutMeSection />
         <WorkSection />
         <ContactSection />
