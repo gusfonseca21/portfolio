@@ -40,9 +40,12 @@ export default function Home() {
   useEffect(() => {
     if (initialIsInView) {
       setNavStyle(false);
+    } else {
+      setNavStyle(!isInView);
     }
-    setNavStyle(!isInView);
   }, [initialIsInView, isInView]);
+
+  console.log(navStyle);
 
   return (
     <>
