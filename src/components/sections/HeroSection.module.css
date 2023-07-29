@@ -2,7 +2,6 @@
   position: sticky;
   height: 100vh;
   height: 100dvh;
-  /* height: 100dvh; */
   inset: 0;
 }
 
@@ -11,7 +10,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* height: 100dvh; */
 }
 
 .heading {
