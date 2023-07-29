@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section id='hero' className={styles["section-main"]}>
+    <section className={styles["section-main"]}>
       <div className={styles.main}>
         <Background />
         <div className={styles.heading}>
@@ -18,6 +18,7 @@ export default function HeroSection() {
             <Button
               text='Dig into my universe'
               style={styles["heading-button"]}
+              clickFunction={() => {}}
             />
           </Link>
         </div>

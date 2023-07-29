@@ -59,11 +59,12 @@
 .button::before {
   background-color: var(--main-color);
 }
-
-.button:hover {
-  color: var(--error);
-  border: 2px solid var(--error);
-  scale: 1.1;
+@media (hover: hover) {
+  .button:hover {
+    color: var(--error);
+    border: 2px solid var(--error);
+    scale: 1.1;
+  }
 }
 
 @media (max-width: 1000px) {

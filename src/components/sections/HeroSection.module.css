@@ -43,17 +43,19 @@
   text-align: center;
 }
 
-.heading-button:hover {
-  transform: scale(110%);
-  color: var(--white);
+@media (hover: hover) {
+  .heading-button:hover {
+    transform: scale(110%);
+    color: var(--white);
+  }
+
+  .heading-button::before {
+    background: var(--main-color);
+  }
 }
 
-.heading-button:hover:active {
+.click {
   transform: scale(0.95);
-}
-
-.heading-button::before {
-  background: var(--main-color);
 }
 
 @media (max-width: 600px) {

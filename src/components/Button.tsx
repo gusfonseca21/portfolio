@@ -30,7 +30,7 @@ export default function Button({
     }
     setTimeout(() => {
       setIsClicked(false);
-    }, 300);
+    }, 500);
   };
 
   return (

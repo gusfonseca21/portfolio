@@ -216,12 +216,16 @@
 }
 
 @media (max-width: 400px) {
+  .main {
+    padding: 0.5rem;
+  }
+
   .left-links {
     width: 15%;
   }
 
   .logo {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .main .checkbox,
@@ -237,7 +241,8 @@
   .button {
     height: 2rem;
     width: 4.2rem;
-    text-align: center;
-    font-size: 0.5rem;
+    font-size: 0.7rem !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 }

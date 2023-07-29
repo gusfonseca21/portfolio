@@ -48,14 +48,16 @@
   background-color: var(--white);
 }
 
-.button::before {
-  color: var(--white);
-  background-color: var(--main-color);
-}
+@media (hover: hover) {
+  .button::before {
+    color: var(--white);
+    background-color: var(--main-color);
+  }
 
-.button:hover {
-  color: var(--white);
-  font-size: 1.2rem;
+  .button:hover {
+    color: var(--white);
+    font-size: 1.2rem;
+  }
 }
 
 .error {

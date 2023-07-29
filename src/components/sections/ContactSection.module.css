@@ -44,13 +44,14 @@
   transition: fill 200ms;
 }
 
-.email:hover .email-icon,
-.email:hover {
-  fill: var(--primary-color);
-  color: var(--primary-color);
-  cursor: pointer;
+@media (hover: hover) {
+  .email:hover .email-icon,
+  .email:hover {
+    fill: var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+  }
 }
-
 .copied {
   position: absolute;
   right: -45%;
@@ -86,5 +87,14 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .copied {
+    position: absolute;
+    bottom: -150%;
+    left: 50%;
+    width: max-content;
   }
 }

@@ -44,17 +44,10 @@ export default function Home() {
       <LoadingScreen />
       <Navbar navStyle={navStyle} />
       <main className={styles.main}>
+        <div id='hero' />
         <ToastContainer {...toastProps} />
         <HeroSection />
-        <div
-          ref={separatorRef}
-          style={{
-            height: 1,
-            width: "100%",
-            backgroundColor: "red",
-            zIndex: 100,
-          }}
-        />
+        <div ref={separatorRef} />
         <AboutMeSection />
         <WorkSection />
         <ContactSection />
