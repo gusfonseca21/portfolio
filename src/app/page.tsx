@@ -13,6 +13,8 @@ import styles from "./page.module.css";
 import { ToastContainer, ToastContainerProps, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import LoadingScreen from "@/components/LoadingScreen";
+import { useInView } from "framer-motion";
+import { isMobile } from "react-device-detect";
 
 const toastProps: ToastContainerProps = {
   position: "bottom-center",
@@ -28,31 +30,15 @@ const toastProps: ToastContainerProps = {
 };
 
 export default function Home() {
-  const [heroRef, setHeroRef] = useState<React.RefObject<HTMLElement> | null>(
-    null
-  );
   const [navStyle, setNavStyle] = useState(false);
 
-  const heroSectionRef = useRef(null);
+  const separatorRef = useRef(null);
+
+  const isInView = useInView(separatorRef);
 
   useEffect(() => {
-    setHeroRef(heroRef);
-  }, [heroRef]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        setNavStyle(!entry.isIntersecting);
-      });
-    });
-    if (heroSectionRef.current) {
-      observer.observe(heroSectionRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+    setNavStyle(!isInView);
+  }, [isInView]);
 
   return (
     <>
@@ -60,7 +46,17 @@ export default function Home() {
       <Navbar navStyle={navStyle} />
       <main className={styles.main}>
         <ToastContainer {...toastProps} />
-        <HeroSection heroRef={heroSectionRef} />
+        <div id='hero' />
+        <HeroSection />
+        <div
+          ref={separatorRef}
+          style={{
+            position: "absolute",
+            top: isMobile ? "90vh" : "100vh",
+            left: 0,
+            width: "100%",
+          }}
+        />
         <AboutMeSection />
         <WorkSection />
         <ContactSection />

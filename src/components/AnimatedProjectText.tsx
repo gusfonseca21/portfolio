@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import styles from "./AnimatedProjectText.module.css";
 import { projectDataProps } from "@/project-data";
@@ -23,7 +22,7 @@ export default function AnimatedProjectText({
     },
   };
 
-  const { id, title, tags, headImage } = projectObj;
+  const { id, title, tags } = projectObj;
 
   return (
     <div className={styles["text-div"]}>
@@ -53,7 +52,15 @@ export default function AnimatedProjectText({
           variants={textMotion}
           animate={projectIndex === id ? "visible" : "hidden"}
         >
-          {...tags}
+          <>
+            {tags.map((tag) => {
+              return (
+                <span key={tag} className={styles.tag}>
+                  {tag}
+                </span>
+              );
+            })}
+          </>
         </motion.span>
       </span>
     </div>

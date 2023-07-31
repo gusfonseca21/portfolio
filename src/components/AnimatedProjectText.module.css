@@ -2,6 +2,9 @@
   overflow: hidden;
   display: inline-block;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .container span {
@@ -11,7 +14,7 @@
 .text-div {
   position: absolute;
   height: inherit;
-  width: inherit;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 10;
@@ -34,5 +37,16 @@
 }
 
 .project-tags {
-  font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.tag::after {
+  content: ",";
+}
+
+.tag:last-child::after {
+  content: "";
 }

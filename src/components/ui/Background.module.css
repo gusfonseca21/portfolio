@@ -3,7 +3,7 @@
   position: absolute;
   background-color: var(--primary-color);
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: 500%;
   height: 100vh;
   width: 100%;
 }

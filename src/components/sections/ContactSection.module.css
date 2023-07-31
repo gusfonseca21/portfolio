@@ -11,6 +11,7 @@
   max-width: 80rem;
   width: 100%;
   gap: 5rem;
+  height: 100%;
 }
 
 .left-box {
@@ -43,13 +44,14 @@
   transition: fill 200ms;
 }
 
-.email:hover .email-icon,
-.email:hover {
-  fill: var(--primary-color);
-  color: var(--primary-color);
-  cursor: pointer;
+@media (hover: hover) {
+  .email:hover .email-icon,
+  .email:hover {
+    fill: var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+  }
 }
-
 .copied {
   position: absolute;
   right: -45%;
@@ -69,5 +71,30 @@
 
 .right-box {
   width: 100%;
-  padding: 1rem;
+}
+
+@media (max-width: 1400px) {
+  .main {
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main {
+    min-height: 120vh !important;
+  }
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .copied {
+    position: absolute;
+    bottom: -150%;
+    left: 50%;
+    width: max-content;
+  }
 }

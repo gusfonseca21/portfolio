@@ -13,6 +13,20 @@
   width: 22px;
 }
 
-.button:hover .icon {
-  fill: var(--main-color) !important;
+@media (hover: hover) {
+  .button:hover .icon {
+    fill: var(--main-color) !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .button {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .icon {
+    height: 19px;
+    width: 19px;
+  }
 }

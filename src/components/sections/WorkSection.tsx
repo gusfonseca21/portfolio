@@ -18,7 +18,7 @@ export default function WorkSection() {
     slides: {
       origin: "center",
       perView: "auto",
-      spacing: 100,
+      spacing: 15,
     },
     detailsChanged(property) {
       setSliderProgress(property.track.details.progress);
@@ -36,9 +36,7 @@ export default function WorkSection() {
   return (
     <section id='work' className={styles.main}>
       <span className='section-title'>Work</span>
-      <span className='section-heading'>
-        <h2>Dig into my universe</h2>
-      </span>
+      <h2 className='section-heading'>Dig into my universe</h2>
       <div
         className={styles["project-slider"]}
         draggable={false}
@@ -54,6 +52,8 @@ export default function WorkSection() {
               onMouseLeave={() => setImageHovered(null)}
               className={`keen-slider__slide ${styles["project-image-div"]}`}
               draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
+              onTouchMove={() => setImageHovered(null)}
             >
               <AnimatedProjectText
                 projectIndex={imageHovered}

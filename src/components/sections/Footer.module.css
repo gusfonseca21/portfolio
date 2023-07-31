@@ -93,7 +93,15 @@
   fill: var(--white-alpha-text);
 }
 
-.social .hitbox:hover .social-icon {
-  fill: var(--white);
-  cursor: pointer;
+@media (hover: hover) {
+  .social .hitbox:hover .social-icon {
+    fill: var(--white);
+    cursor: pointer;
+  }
+}
+@media (max-width: 530px) {
+  .links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }
