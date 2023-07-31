@@ -68,7 +68,7 @@
     transform: transale3d(0, 0, 0);
   }
 
-  .project-image-div:active .project-image {
+  .project-image-div:focus .project-image {
     scale: 1.05;
     filter: brightness(0.3);
     /* filter: brightness(0.6) blur(4px); */

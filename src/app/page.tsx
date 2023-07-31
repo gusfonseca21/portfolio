@@ -51,14 +51,10 @@ export default function Home() {
         <div
           ref={separatorRef}
           style={{
-            // height: isMobile ? "4.5rem" : 1,
             position: "absolute",
             top: isMobile ? "90vh" : "100vh",
             left: 0,
-            height: 1,
-            zIndex: 100,
             width: "100%",
-            backgroundColor: "red",
           }}
         />
         <AboutMeSection />
