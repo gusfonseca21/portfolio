@@ -11,18 +11,10 @@ export default function Background() {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      await console.log(container);
-    },
-    []
-  );
-
   return (
     <Particles
       id='tsparticles'
       init={particlesInit}
-      loaded={particlesLoaded}
       className={styles.background}
       options={{
         fullScreen: false,

@@ -52,6 +52,7 @@ export default function WorkSection() {
             className={styles["project-image"]}
             style={{ transform: `translateX(${sliderProgress * 10}%)` }}
             unoptimized
+            priority
           />
         </Link>
       );
