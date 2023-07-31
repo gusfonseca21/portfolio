@@ -1,14 +1,8 @@
 "use client";
-import { useCallback, useEffect } from "react";
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import styles from "./Background.module.css";
-import grid from "../../../public/images/grid.svg";
+import { useCallback } from "react";
+import type { Container, Engine } from "tsparticles-engine";
+import Particles from "react-particles";
+import { loadSlim } from "tsparticles-slim";
 
 const springConfig = {
   damping: 17.5,
@@ -17,43 +11,82 @@ const springConfig = {
 };
 
 export default function Background() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine);
+  }, []);
 
-  const backgroundXSync = useTransform(mouseX, [-1, 1], [30, -30]);
-  const backgroundYSync = useTransform(mouseY, [-1, 1], [15, -15]);
-  const backgroundX = useSpring(backgroundXSync, springConfig);
-  const backgroundY = useSpring(backgroundYSync, springConfig);
-
-  const updateMouseScreenPosition = useCallback(
-    ({ clientX, clientY }: MouseEvent) => {
-      const screenMiddleX = window.innerWidth / 2;
-      const screenMiddleY = window.innerHeight / 2;
-
-      const screenMouseX = (clientX - screenMiddleX) / screenMiddleX;
-      const screenMouseY = (clientY - screenMiddleY) / screenMiddleY;
-
-      mouseX.set(screenMouseX);
-      mouseY.set(screenMouseY);
+  const particlesLoaded = useCallback(
+    async (container: Container | undefined) => {
+      await console.log(container);
     },
-    [mouseX, mouseY]
+    []
   );
 
-  useEffect(() => {
-    window.addEventListener("mousemove", updateMouseScreenPosition);
-
-    return () => {
-      window.removeEventListener("mousemove", updateMouseScreenPosition);
-    };
-  }, [updateMouseScreenPosition]);
-
   return (
-    <motion.div
-      aria-hidden
-      className={styles.background}
-      style={{
-        backgroundImage: `url(${grid.src})`,
-        backgroundPosition: useMotionTemplate`calc(50% + ${backgroundX}px) calc(50% + ${backgroundY}px)`,
+    <Particles
+      id='tsparticles'
+      init={particlesInit}
+      loaded={particlesLoaded}
+      options={{
+        background: {
+          color: {
+            value: "#17c0eb",
+          },
+        },
+        fpsLimit: 120,
+        interactivity: {
+          events: {
+            onClick: {
+              enable: false,
+            },
+            onHover: {
+              enable: false,
+              mode: "repulse",
+            },
+            resize: true,
+          },
+          modes: {
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+          },
+        },
+        particles: {
+          color: {
+            value: "#ffffff",
+          },
+          links: {
+            color: "#ffffff",
+            distance: 150,
+            enable: true,
+            opacity: 0.5,
+            width: 1,
+          },
+          move: {
+            direction: "none",
+            enable: true,
+            outModes: {
+              default: "bounce",
+            },
+            random: false,
+            speed: 6,
+            straight: false,
+          },
+          number: {
+            value: 80,
+          },
+          opacity: {
+            value: 0.5,
+          },
+          shape: {
+            type: "circle",
+          },
+          size: {
+            value: { min: 1, max: 5 },
+          },
+        },
+        detectRetina: true,
       }}
     />
   );
