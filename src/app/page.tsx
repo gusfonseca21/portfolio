@@ -55,7 +55,7 @@ export default function Home() {
         <div
           ref={separatorRef}
           style={{
-            height: isMobile ? "4rem" : 1,
+            height: isMobile ? "4rem + 1px" : 1,
             width: "100%",
           }}
         />
