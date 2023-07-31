@@ -32,17 +32,13 @@ const toastProps: ToastContainerProps = {
 export default function Home() {
   const [navStyle, setNavStyle] = useState(false);
 
-  const upperHeroRef = useRef(null);
   const separatorRef = useRef(null);
 
-  const initialIsInView = useInView(upperHeroRef);
   const isInView = useInView(separatorRef);
 
   useEffect(() => {
     setNavStyle(!isInView);
   }, [isInView]);
-
-  console.log(isMobile);
 
   return (
     <>
@@ -55,7 +51,8 @@ export default function Home() {
         <div
           ref={separatorRef}
           style={{
-            height: isMobile ? "4rem + 1px" : 1,
+            height: isMobile ? "4.5rem" : 1,
+            backgroundColor: "red",
             width: "100%",
           }}
         />
