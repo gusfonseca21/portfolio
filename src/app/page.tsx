@@ -52,8 +52,8 @@ export default function Home() {
       <LoadingScreen />
       <Navbar navStyle={navStyle} />
       <main className={styles.main}>
-        <div id='hero' ref={upperHeroRef} />
         <ToastContainer {...toastProps} />
+        <div id='hero' ref={upperHeroRef} />
         <HeroSection />
         <div ref={separatorRef} />
         <AboutMeSection />
