@@ -14,6 +14,7 @@ import { ToastContainer, ToastContainerProps, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import LoadingScreen from "@/components/LoadingScreen";
 import { useInView } from "framer-motion";
+import { isMobile } from "react-device-detect";
 
 const toastProps: ToastContainerProps = {
   position: "bottom-center",
@@ -38,14 +39,10 @@ export default function Home() {
   const isInView = useInView(separatorRef);
 
   useEffect(() => {
-    if (initialIsInView) {
-      setNavStyle(false);
-    } else {
-      setNavStyle(!isInView);
-    }
-  }, [initialIsInView, isInView]);
+    setNavStyle(!isInView);
+  }, [isInView]);
 
-  console.log(navStyle);
+  console.log(isMobile);
 
   return (
     <>
@@ -53,9 +50,15 @@ export default function Home() {
       <Navbar navStyle={navStyle} />
       <main className={styles.main}>
         <ToastContainer {...toastProps} />
-        <div id='hero' ref={upperHeroRef} />
+        <div id='hero' />
         <HeroSection />
-        <div ref={separatorRef} />
+        <div
+          ref={separatorRef}
+          style={{
+            height: isMobile ? "4rem" : 1,
+            width: "100%",
+          }}
+        />
         <AboutMeSection />
         <WorkSection />
         <ContactSection />
