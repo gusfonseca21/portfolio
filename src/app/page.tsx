@@ -47,7 +47,7 @@ export default function Home() {
       <main className={styles.main}>
         <ToastContainer {...toastProps} />
         <div id='hero' />
-        <HeroSection />
+        <HeroSection heroHasPassed={navStyle} />
         <div
           ref={separatorRef}
           style={{

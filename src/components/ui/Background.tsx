@@ -3,12 +3,8 @@ import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
-
-const springConfig = {
-  damping: 17.5,
-  mass: 0.5,
-  stiffness: 150,
-};
+import { isMobile } from "react-device-detect";
+import styles from "./Background.module.css";
 
 export default function Background() {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -27,7 +23,9 @@ export default function Background() {
       id='tsparticles'
       init={particlesInit}
       loaded={particlesLoaded}
+      className={styles.background}
       options={{
+        fullScreen: false,
         background: {
           color: {
             value: "#17c0eb",
@@ -40,7 +38,7 @@ export default function Background() {
               enable: false,
             },
             onHover: {
-              enable: false,
+              enable: !isMobile,
               mode: "repulse",
             },
             resize: true,
@@ -54,13 +52,13 @@ export default function Background() {
         },
         particles: {
           color: {
-            value: "#ffffff",
+            value: "#fff",
           },
           links: {
-            color: "#ffffff",
+            color: "#fff",
             distance: 150,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.8,
             width: 1,
           },
           move: {
@@ -70,14 +68,14 @@ export default function Background() {
               default: "bounce",
             },
             random: false,
-            speed: 6,
+            speed: 3,
             straight: false,
           },
           number: {
-            value: 80,
+            value: isMobile ? 20 : 80,
           },
           opacity: {
-            value: 0.5,
+            value: 0.8,
           },
           shape: {
             type: "circle",
