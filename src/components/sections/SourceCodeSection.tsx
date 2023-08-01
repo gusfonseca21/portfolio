@@ -8,16 +8,14 @@ export default function SourceCodeSection() {
     <section id='source' className={styles.main}>
       <MatrixBackground />
       <div className={styles.content}>
-        <span className='section-title'>Source Code</span>
-        <h2 className='section-heading'>Behind the simulation</h2>
+        <span className='section-title'>Código Fonte</span>
+        <h2 className='section-heading'>Nos bastidores</h2>
         <p className={`subheading ${styles.text}`}>
-          You take the <span className='white-text'>blue pill</span> - you keep
-          scrolling, you leave this site and believe whatever you want to
-          believe. You take the <span className='white-text'>red pill</span> -
-          you stay in wonderland, and I show you how deep the rabbit hole goes.
+          Curioso para ver como este site foi construído? Clique no botão abaixo
+          para visualizar o código-fonte.
         </p>
         <a href='https://github.com/gusfonseca21/portfolio' target='_blank'>
-          <Button text='Show me' style={styles.button} />
+          <Button text='Mostre-me' style={styles.button} />
         </a>
       </div>
     </section>

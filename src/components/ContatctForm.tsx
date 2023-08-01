@@ -84,7 +84,7 @@ export default function ContactForm() {
         {nameErr && <AttentionIcon className={styles["attention-icon"]} />}
       </div>
       <div className={styles["input-div"]}>
-        <span>Email</span>
+        <span>E-mail</span>
         <input
           onChange={(e) => {
             setEmailErr(null);
@@ -117,7 +117,7 @@ export default function ContactForm() {
         )}
       </div>
       <Button
-        text='Hit me up'
+        text='Enviar E-mail'
         style={styles.button}
         clickFunction={onSubmit}
         loading={isLoading}

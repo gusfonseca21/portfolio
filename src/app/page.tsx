@@ -31,6 +31,7 @@ const toastProps: ToastContainerProps = {
 
 export default function Home() {
   const [navStyle, setNavStyle] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
   const separatorRef = useRef(null);
 
@@ -40,11 +41,24 @@ export default function Home() {
     setNavStyle(!isInView);
   }, [isInView]);
 
+  const closeNavMenu = () => {
+    if (!navbarOpen) return;
+    setNavbarOpen(false);
+  };
+
   return (
     <>
       <LoadingScreen />
-      <Navbar navStyle={navStyle} />
-      <main className={styles.main}>
+      <Navbar
+        navStyle={navStyle}
+        navbarOpen={navbarOpen}
+        setNavbarOpen={setNavbarOpen}
+        closeNavMenu={closeNavMenu}
+      />
+      <main
+        onClick={closeNavMenu}
+        className={`${styles.main} ${navbarOpen ? styles.open : ""}`}
+      >
         <ToastContainer {...toastProps} />
         <div id='hero' />
         <HeroSection heroHasPassed={navStyle} />

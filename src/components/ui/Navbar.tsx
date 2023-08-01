@@ -9,11 +9,17 @@ const inter = Inter({ subsets: ["latin"] });
 
 interface NavbarProps {
   navStyle: boolean;
+  navbarOpen: boolean;
+  setNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  closeNavMenu: () => void;
 }
 
-export default function Navbar({ navStyle }: NavbarProps) {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-
+export default function Navbar({
+  navStyle,
+  navbarOpen,
+  setNavbarOpen,
+  closeNavMenu,
+}: NavbarProps) {
   const pathName = usePathname();
 
   const initialPage = pathName === "/";
@@ -25,15 +31,18 @@ export default function Navbar({ navStyle }: NavbarProps) {
       } ${navbarOpen ? styles["show-navbar"] : ""}`}
     >
       <div className={styles["left-links"]}>
-        <Link href={initialPage ? "#about" : "/#about"}>About</Link>
-        <Link href={initialPage ? "#work" : "/#work"}>Work</Link>
+        <Link href={initialPage ? "#about" : "/#about"}>Sobre Mim</Link>
+        <Link href={initialPage ? "#work" : "/#work"}>Trabalho</Link>
       </div>
       <input
         className={styles.checkbox}
         type='checkbox'
+        checked={navbarOpen}
         name=''
         id=''
-        onClick={() => setNavbarOpen(!navbarOpen)}
+        onClick={() => {
+          if (setNavbarOpen) setNavbarOpen(!navbarOpen);
+        }}
       />
       <div className={styles["hamburger-lines"]}>
         <span className={`${styles.line} ${styles.line1}`}></span>
@@ -41,19 +50,27 @@ export default function Navbar({ navStyle }: NavbarProps) {
         <span className={`${styles.line} ${styles.line3}`}></span>
       </div>
       <div className={`${styles["nav-menu"]} ${navbarOpen ? styles.show : ""}`}>
-        <Link href={initialPage ? "#about" : "/#about"}>About</Link>
-        <Link href={initialPage ? "#work" : "/#work"}>Work</Link>
+        <Link onClick={closeNavMenu} href={initialPage ? "#about" : "/#about"}>
+          Sobre Mim
+        </Link>
+        <Link onClick={closeNavMenu} href={initialPage ? "#work" : "/#work"}>
+          Trabalho
+        </Link>
       </div>
 
       <div className={styles.logo}>
-        <Link href={initialPage ? "#hero" : "/"}>
+        <Link onClick={closeNavMenu} href={initialPage ? "#hero" : "/"}>
           <span className={styles.name}>
             <span style={{ fontWeight: 300 }}>GUSTAVO</span> FONSECA
           </span>
         </Link>
       </div>
       <Link href={initialPage ? "#contact" : "/#contact"}>
-        <Button text='Contato' style={styles.button} />
+        <Button
+          text='Contato'
+          style={styles.button}
+          clickFunction={closeNavMenu}
+        />
       </Link>
     </nav>
   );

@@ -4,6 +4,14 @@
   position: relative;
 }
 
+.heading {
+  display: flex;
+  justify-content: flex-start !important;
+  text-align: start !important;
+  align-items: center;
+  min-height: 6.5rem;
+}
+
 .meImage {
   height: 100%;
   width: 50%;
@@ -16,7 +24,7 @@
   width: 50%;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start !important;
   gap: 0.5rem;
   background-color: var(--main-color);
   padding: 5rem;
@@ -26,6 +34,7 @@
   color: var(--grey);
   max-width: 65ch;
   line-height: 25px;
+  text-align: left;
 }
 
 .description .white {

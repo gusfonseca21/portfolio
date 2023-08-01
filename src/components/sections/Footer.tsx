@@ -19,21 +19,32 @@ export default function Footer() {
 
   return (
     <footer className={`${inter.className} ${styles.main} `}>
-      <div className={styles.logo} onClick={scrollToTop}>
+      <Link
+        href={initialPage ? `#hero` : `/#hero`}
+        className={styles.logo}
+        onClick={scrollToTop}
+      >
         <TagIcon />
-      </div>
+      </Link>
       <div className={styles.links}>
-        {sections.map((section) => {
-          return (
-            <Link
-              key={section}
-              href={initialPage ? `#${section}` : `/#${section}`}
-              className={styles.link}
-            >
-              {section !== "source" ? section : "Source Code"}
-            </Link>
-          );
-        })}
+        <Link href={initialPage ? `#about` : `/#about`} className={styles.link}>
+          Sobre Mim
+        </Link>
+        <Link href={initialPage ? `#work` : `/#work`} className={styles.link}>
+          Trabalho
+        </Link>
+        <Link
+          href={initialPage ? `#contact` : `/#contact`}
+          className={styles.link}
+        >
+          Contato
+        </Link>
+        <Link
+          href={initialPage ? `#source` : `/#source`}
+          className={styles.link}
+        >
+          Código Fonte
+        </Link>
       </div>
       <div className={styles["social"]}>
         <div className={styles.hitbox}>

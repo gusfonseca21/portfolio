@@ -8,6 +8,12 @@
   padding: 0;
   width: 100%;
   position: relative;
+  transition: all 400ms ease-in-out;
+}
+
+.open {
+  filter: blur(4px);
+  touch-action: none;
 }
 
 .toast {
