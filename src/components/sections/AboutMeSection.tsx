@@ -1,6 +1,6 @@
 import styles from "./AboutMeSection.module.css";
 import Image from "next/image";
-import meImage from "../../../public/images/me.jpg";
+import meImage from "../../../public/images/me.webp";
 import { AnimatedHeading } from "../AnimatedHeading";
 
 const headings = [
@@ -20,9 +20,8 @@ export default function AboutMeSection({}) {
         className={styles.meImage}
         src={meImage}
         alt='Gustavo Fonseca'
-        width={500}
-        height={500}
-        quality={100}
+        priority
+        unoptimized
       />
 
       <div className={styles.text}>

@@ -69,8 +69,8 @@
 html,
 body {
   scroll-behavior: smooth !important;
-  overflow-x: hidden;
   height: 100%;
+  width: 100vw;
 }
 
 body {
@@ -82,7 +82,6 @@ body {
     )
     rgb(var(--background-start-rgb));
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 a {
@@ -93,7 +92,6 @@ a {
 section {
   height: 105vh;
   width: 100%;
-  z-index: 1;
 }
 
 .section-title {

@@ -25,13 +25,39 @@ export default function WorkSection() {
     },
   });
 
-  const imagePosition = {
-    transform: `translateX(${sliderProgress * 10}%)`,
-  };
-
-  const sliderFill = {
-    width: `${sliderProgress < 0 ? 0 : (sliderProgress / 0.8814) * 100}%`,
-  };
+  const memoizedProjects = useMemo(() => {
+    return projectData.map((project) => {
+      const formattedDate = formatDate(project.date);
+      return (
+        <Link
+          href={`/project/${project.title.toLowerCase()}`}
+          key={project.id}
+          onMouseEnter={() => setImageHovered(project.id)}
+          onMouseLeave={() => setImageHovered(null)}
+          className={`keen-slider__slide ${styles["project-image-div"]}`}
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
+          onTouchMove={() => setImageHovered(null)}
+        >
+          <AnimatedProjectText
+            projectIndex={imageHovered}
+            projectObj={{ ...project, date: formattedDate }}
+          />
+          <Image
+            draggable={false}
+            src={project.headImage}
+            alt={project.title}
+            width={500}
+            height={500}
+            className={styles["project-image"]}
+            style={{ transform: `translateX(${sliderProgress * 10}%)` }}
+            unoptimized
+            priority
+          />
+        </Link>
+      );
+    });
+  }, [imageHovered, sliderProgress]);
 
   return (
     <section id='work' className={styles.main}>
@@ -42,38 +68,16 @@ export default function WorkSection() {
         draggable={false}
         ref={sliderRef}
       >
-        {projectData.map((project) => {
-          const formattedDate = formatDate(project.date);
-          return (
-            <Link
-              href={`/project/${project.title.toLowerCase()}`}
-              key={project.id}
-              onMouseEnter={() => setImageHovered(project.id)}
-              onMouseLeave={() => setImageHovered(null)}
-              className={`keen-slider__slide ${styles["project-image-div"]}`}
-              draggable={false}
-              onContextMenu={(e) => e.preventDefault()}
-              onTouchMove={() => setImageHovered(null)}
-            >
-              <AnimatedProjectText
-                projectIndex={imageHovered}
-                projectObj={{ ...project, date: formattedDate }}
-              />
-              <Image
-                draggable={false}
-                src={project.headImage}
-                alt={project.title}
-                width={500}
-                height={500}
-                className={styles["project-image"]}
-                style={imagePosition}
-                unoptimized
-              />
-            </Link>
-          );
-        })}
+        {memoizedProjects}
         <div className={styles["slider-feedback"]}>
-          <div className={styles["slider-fill"]} style={sliderFill} />
+          <div
+            className={styles["slider-fill"]}
+            style={{
+              width: `${
+                sliderProgress < 0 ? 0 : (sliderProgress / 0.8814) * 100
+              }%`,
+            }}
+          />
         </div>
       </div>
     </section>

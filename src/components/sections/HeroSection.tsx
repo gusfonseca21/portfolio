@@ -3,11 +3,15 @@ import Background from "../ui/Background";
 import Button from "../Button";
 import Link from "next/link";
 
-export default function HeroSection() {
+export default function HeroSection({
+  heroHasPassed,
+}: {
+  heroHasPassed: boolean;
+}) {
   return (
     <section className={styles["section-main"]}>
       <div className={styles.main}>
-        <Background />
+        {!heroHasPassed && <Background />}
         <div className={styles.heading}>
           <h1>
             Programming
