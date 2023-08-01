@@ -20,8 +20,6 @@ export default function AboutMeSection({}) {
         className={styles.meImage}
         src={meImage}
         alt='Gustavo Fonseca'
-        width={500}
-        height={500}
         priority
         unoptimized
       />

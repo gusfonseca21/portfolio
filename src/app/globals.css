@@ -70,6 +70,7 @@ html,
 body {
   scroll-behavior: smooth !important;
   height: 100%;
+  width: 100vw;
 }
 
 body {
@@ -80,6 +81,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  overflow-x: hidden;
 }
 
 a {
