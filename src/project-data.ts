@@ -16,19 +16,18 @@ export type Buttons = "viewProject" | "viewSourceCode";
 export const projectData: projectDataProps[] = [
   {
     id: 1,
-    title: "Contentary",
-    date: "2023-05",
+    title: "Forkify",
+    date: "2022-08",
     description:
-      "Website for Contentary, the social media agency, founded by the two influencers behind Shoppisticated.",
-    tags: ["Website"],
-    buttons: ["viewProject"],
-    headImage: "/images/projects/contentary/contentary-heading.webp",
+      "Projeto de uma aplicação web que acessa uma API contendo receitas e as disponibiliza em uma interface bonita e interativa.",
+    tags: ["Web app", "React", "NextJS", "API"],
+    buttons: ["viewProject", "viewSourceCode"],
+    headImage: "/images/projects/forkify/forkify-1.webp",
     exampleImages: [
-      "/images/projects/contentary/contentary-example-1.webp",
-      "/images/projects/contentary/contentary-example-2.webp",
-      "/images/projects/contentary/contentary-example-3.webp",
+      "/images/projects/forkify/forkify-2.webp",
+      "/images/projects/forkify/forkify-3.webp",
     ],
-    projectLink: "https://contentary-agency.com/",
+    projectLink: "https://forkify-mu.vercel.app/",
   },
   {
     id: 2,

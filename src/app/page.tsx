@@ -62,15 +62,7 @@ export default function Home() {
         <ToastContainer {...toastProps} />
         <div id='hero' />
         <HeroSection heroHasPassed={navStyle} />
-        <div
-          ref={separatorRef}
-          style={{
-            position: "absolute",
-            top: isMobile ? "90vh" : "100vh",
-            left: 0,
-            width: "100%",
-          }}
-        />
+        <div ref={separatorRef} className={styles.separator} />
         <AboutMeSection />
         <WorkSection />
         <ContactSection />

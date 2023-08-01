@@ -38,6 +38,7 @@ export default function Navbar({
         className={styles.checkbox}
         type='checkbox'
         checked={navbarOpen}
+        onChange={() => setNavbarOpen(!navbarOpen)}
         name=''
         id=''
         onClick={() => {

@@ -10,7 +10,7 @@ interface ViewProjectButtonProps {
 export default function ViewProjectButton({ link }: ViewProjectButtonProps) {
   return (
     <Button
-      text='View Project'
+      text='Ver Projeto'
       iconBefore={<EyeIcon className={styles.icon} />}
       style={styles.button}
       clickFunction={() => {

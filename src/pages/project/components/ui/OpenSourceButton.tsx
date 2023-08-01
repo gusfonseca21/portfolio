@@ -10,7 +10,7 @@ interface OpenSourceButtonProps {
 export default function OpenSourceButton({ link }: OpenSourceButtonProps) {
   return (
     <Button
-      text='View Source Code'
+      text='Ver Código Fonte'
       iconBefore={<GithubIcon className={styles.icon} />}
       style={styles.button}
       clickFunction={() => {
