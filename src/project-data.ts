@@ -46,21 +46,4 @@ export const projectData: projectDataProps[] = [
     ],
     openSourceLink: "https://github.com/gusfonseca21/expense-tracker",
   },
-  {
-    id: 3,
-    title: "Nullpunkt",
-    date: "2023-07",
-    description:
-      "E-Commerce website for Nullpunkt Functional Fragrances, a unisex wellbeing brand with a vision to support people in integrating more mindful and balanced routines.",
-    tags: ["Website", "Shopify"],
-    buttons: ["viewProject"],
-    headImage: "/images/projects/nullpunkt/nullpunkt-head.webp",
-    exampleImages: [
-      "/images/projects/nullpunkt/nullpunkt-example-1.webp",
-      "/images/projects/nullpunkt/nullpunkt-example-2.webp",
-      "/images/projects/nullpunkt/nullpunkt-example-3.webp",
-      "/images/projects/nullpunkt/nullpunkt-example-4.webp",
-    ],
-    projectLink: "https://nullpunkt.co/",
-  },
 ];
