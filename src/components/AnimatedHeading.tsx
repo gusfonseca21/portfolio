@@ -86,7 +86,7 @@ export const AnimatedHeading: React.FC<AnimatedHeading> = ({ headings }) => {
   }, [typingMode, updateTypingModeTimer]);
 
   return (
-    <span className='section-heading'>
+    <span className='section-heading' style={{ textAlign: "start" }}>
       <AnimatePresence mode='wait'>
         <motion.h2
           aria-hidden

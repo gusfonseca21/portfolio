@@ -14,9 +14,9 @@ export default function RelatedProjects({
   return (
     <section className={styles.main}>
       <div className={styles["section-heading"]}>
-        <span className='section-title'>Related Projects</span>
+        <span className='section-title'>Outros Projetos</span>
         <span className='section-heading'>
-          <h2>Discover new worlds</h2>
+          <h2>Descubra mais</h2>
         </span>
       </div>
       <div className={styles["other-projects"]}>

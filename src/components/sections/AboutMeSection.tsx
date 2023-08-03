@@ -4,12 +4,12 @@ import meImage from "../../../public/images/me.webp";
 import { AnimatedHeading } from "../AnimatedHeading";
 
 const headings = [
-  "Developer",
-  "Designer",
-  "Problem solver",
+  "Desenvolvedor",
+  "Apaixonado por tecnologia",
+  "Solucionador de problemas",
+  "Determinado",
   "Freelancer",
-  "Coffeeholic",
-  "Globetrotter",
+  "Aprendiz Incansável",
 ];
 
 export default function AboutMeSection({}) {
@@ -25,17 +25,17 @@ export default function AboutMeSection({}) {
       />
 
       <div className={styles.text}>
-        <span className='section-title'>About</span>
-        <span className={styles.heading}>
+        <span className='section-title'>Sobre Mim</span>
+        <div className={styles.heading}>
           <AnimatedHeading headings={headings} />
-        </span>
+        </div>
         <span className={styles.description}>
-          I am Gustavo, a passionate freelancer bringing you{" "}
+          Sou Gustavo, um entusiasta do front-end, trazendo a você interfaces{" "}
           <span className='white-text'>
-            programming and design from the future
-          </span>
-          . My expertise is developing next-level websites and web applications
-          including full frontend design.
+            cuidadosamente projetadas para melhorar a experiência dos usuários.
+          </span>{" "}
+          Meu objetivo é criar sites e aplicações web que proporcionem uma
+          jornada agradável e intuitiva.
         </span>
       </div>
     </section>

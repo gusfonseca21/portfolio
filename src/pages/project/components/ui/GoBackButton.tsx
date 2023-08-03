@@ -7,7 +7,7 @@ export default function GoBackButton({ className }: { className?: string }) {
   return (
     <Link href='/' className={`${styles.main} ${className ? className : ""}`}>
       <LeftArrowIcon className={styles.icon} />
-      <span className={styles.text}>Go back</span>
+      <span className={styles.text}>Voltar</span>
     </Link>
   );
 }

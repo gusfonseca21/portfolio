@@ -9,6 +9,11 @@
   justify-content: center;
 }
 
+.open {
+  filter: blur(4px);
+  touch-action: none;
+}
+
 .example-images {
   display: flex;
   flex-direction: column;

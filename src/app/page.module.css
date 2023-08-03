@@ -8,9 +8,28 @@
   padding: 0;
   width: 100%;
   position: relative;
+  transition: all 400ms ease-in-out;
+}
+
+.separator {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+}
+
+.open {
+  filter: blur(4px);
+  touch-action: none;
 }
 
 .toast {
   background-color: var(--main-color-light);
   border: 1px solid var(--white-alpha);
+}
+
+@media (max-width: 1000px) {
+  .separator {
+    top: 90vh;
+  }
 }

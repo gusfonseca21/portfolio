@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import "../../app/globals.css";
 import styles from "./[projectName].module.css";
@@ -16,6 +16,8 @@ import { Footer } from "@/components/sections";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function ProjectPage() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
   const router = useRouter();
 
   const queryProject = router.query.projectName;
@@ -30,11 +32,25 @@ export default function ProjectPage() {
     (project) => project.title.toLowerCase() !== queryProject
   );
 
+  const closeNavMenu = () => {
+    if (!navbarOpen) return;
+    setNavbarOpen(false);
+  };
+
   return (
     <>
       <LoadingScreen />
-      <Navbar navStyle={true} />
-      <main className={`${styles.main} ${inter.className}`}>
+      <Navbar
+        navStyle={true}
+        closeNavMenu={closeNavMenu}
+        setNavbarOpen={setNavbarOpen}
+        navbarOpen={navbarOpen}
+      />
+      <main
+        className={`${styles.main} ${inter.className} ${
+          navbarOpen ? styles.open : ""
+        }`}
+      >
         <HeroProject {...selectedProject} />
         <div className={styles["example-images"]}>
           {selectedProject.exampleImages.map((image, index) => {

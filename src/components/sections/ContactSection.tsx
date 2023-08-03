@@ -21,13 +21,13 @@ export default function ContactSection() {
     <section id='contact' className={styles.main}>
       <div className={styles.content}>
         <div className={styles["left-box"]}>
-          <span className='section-title'>Contact</span>
+          <span className='section-title'>Contato</span>
           <h2 className='section-heading' style={{ textAlign: "start" }}>
-            Got a problem to solve?
+            Precisa de um dev?
           </h2>
           <p className='subheading'>
-            Get your space suit ready and tell me your ideas to develop your
-            dream website.
+            Com as ferramentas do desenvolvedor, vamos explorar novos horizontes
+            e moldar o futuro!
           </p>
           <div className={styles.email} onClick={() => copyToClipboard()}>
             <span>

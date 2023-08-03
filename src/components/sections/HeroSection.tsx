@@ -14,13 +14,13 @@ export default function HeroSection({
         {!heroHasPassed && <Background />}
         <div className={styles.heading}>
           <h1>
-            Programming
-            <br /> and Design
-            <br /> from the Future
+            Desenvolvedor
+            <br /> Web Front End
+            <br /> do Futuro
           </h1>
           <Link href='#work'>
             <Button
-              text='Dig into my universe'
+              text='Conheça meu trabalho'
               style={styles["heading-button"]}
               clickFunction={() => {}}
             />
