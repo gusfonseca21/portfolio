@@ -30,6 +30,7 @@ export default function HeroProject({
           width={500}
           alt={title}
           unoptimized
+          priority
           className={styles["head-image"]}
         />
       </div>
@@ -45,7 +46,7 @@ export default function HeroProject({
           ))}
         </div>
         <div className={styles.buttons}>
-          <ViewProjectButton link={projectLink} />
+          <ViewProjectButton link={projectLink ? projectLink : ""} />
           {openSourceLink ? <OpenSourceButton link={openSourceLink} /> : ""}
         </div>
       </div>

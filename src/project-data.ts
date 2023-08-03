@@ -7,7 +7,7 @@ export type projectDataProps = {
   buttons: Buttons[];
   headImage: string;
   exampleImages: string[];
-  projectLink: string;
+  projectLink?: string;
   openSourceLink?: string;
 };
 
@@ -20,7 +20,7 @@ export const projectData: projectDataProps[] = [
     date: "2022-08",
     description:
       "Projeto de uma aplicação web que acessa uma API contendo receitas e as disponibiliza em uma interface bonita e interativa.",
-    tags: ["Web app", "React", "NextJS", "API"],
+    tags: ["Web App", "React", "NextJS", "API"],
     buttons: ["viewProject", "viewSourceCode"],
     headImage: "/images/projects/forkify/forkify-1.webp",
     exampleImages: [
@@ -31,19 +31,20 @@ export const projectData: projectDataProps[] = [
   },
   {
     id: 2,
-    title: "Lockey",
-    date: "2023-06",
+    title: "Expense Tracker",
+    date: "2023-04",
     description:
-      "LOCKEY is the ultimate tool for both encryption and decryption - brought to you from the past.",
-    tags: ["Website", "Web-app", "Open-source"],
-    buttons: ["viewProject", "viewSourceCode"],
-    headImage: "/images/projects/lockey/lockey-head.webp",
+      "Aplicativo mobile para manter e organizar suas despesas pessoais de maneira fácil e intuitiva.",
+    tags: ["Mobile App", "React Native"],
+    buttons: ["viewSourceCode"],
+    headImage: "/images/projects/expense-tracker/expense-tracker-heading.webp",
     exampleImages: [
-      "/images/projects/lockey/lockey-example-1.gif",
-      "/images/projects/lockey/lockey-example-2.webp",
+      "/images/projects/expense-tracker/expense-tracker-1.webp",
+      "/images/projects/expense-tracker/expense-tracker-2.webp",
+      "/images/projects/expense-tracker/expense-tracker-3.webp",
+      "/images/projects/expense-tracker/expense-tracker-4.webp",
     ],
-    projectLink: "https://lockey.lokkeestudios.com/",
-    openSourceLink: "https://github.com/lokkeestudios/lockey",
+    openSourceLink: "https://github.com/gusfonseca21/expense-tracker",
   },
   {
     id: 3,
