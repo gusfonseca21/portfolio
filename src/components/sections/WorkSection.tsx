@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import styles from "./WorkSection.module.css";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -61,8 +61,8 @@ export default function WorkSection() {
 
   return (
     <section id='work' className={styles.main}>
-      <span className='section-title'>Trabalho</span>
-      <h2 className='section-heading'>Explore minhas criações</h2>
+      <span className='section-title'>Projetos</span>
+      <h2 className='section-heading'>Explore algumas criações</h2>
       <div
         className={styles["project-slider"]}
         draggable={false}

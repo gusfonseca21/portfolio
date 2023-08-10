@@ -15,12 +15,11 @@ export default function HeroSection({
         <div className={styles.heading}>
           <h1>
             Desenvolvedor
-            <br /> Web Front End
-            <br /> do Futuro
+            <br /> Web do Futuro
           </h1>
           <Link href='#work'>
             <Button
-              text='Conheça meu trabalho'
+              text='Conheça meus projetos'
               style={styles["heading-button"]}
               clickFunction={() => {}}
             />

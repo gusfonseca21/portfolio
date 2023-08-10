@@ -32,7 +32,7 @@ export default function Navbar({
     >
       <div className={styles["left-links"]}>
         <Link href={initialPage ? "#about" : "/#about"}>Sobre Mim</Link>
-        <Link href={initialPage ? "#work" : "/#work"}>Trabalho</Link>
+        <Link href={initialPage ? "#work" : "/#work"}>Projetos</Link>
       </div>
       <input
         className={styles.checkbox}
