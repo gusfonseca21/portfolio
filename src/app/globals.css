@@ -38,6 +38,7 @@ body {
   height: 100%;
   width: 100vw;
   overflow-x: hidden;
+  color: var(--white);
 }
 
 a {
@@ -96,12 +97,6 @@ textarea {
   font-size: 1.2rem;
   color: var(--primary-color);
   text-transform: uppercase;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
 @media (max-width: 400px) {
