@@ -45,7 +45,7 @@ export const projectData: projectDataProps[] = [
       "/images/projects/expense-tracker/expense-tracker-3.webp",
       "/images/projects/expense-tracker/expense-tracker-4.webp",
     ],
-    openSourceLink: "https://github.com/gusfonseca21/expense-tracker",
     projectLink: "https://expense-tracker-web-deploy.vercel.app/",
+    openSourceLink: "https://github.com/gusfonseca21/expense-tracker",
   },
 ];
