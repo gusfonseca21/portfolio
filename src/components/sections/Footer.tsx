@@ -31,7 +31,7 @@ export default function Footer() {
           Sobre Mim
         </Link>
         <Link href={initialPage ? `#work` : `/#work`} className={styles.link}>
-          Trabalho
+          Projetos
         </Link>
         <Link
           href={initialPage ? `#contact` : `/#contact`}

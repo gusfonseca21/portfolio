@@ -12,11 +12,25 @@
   min-height: 6.5rem;
 }
 
-.meImage {
+/* .meImage {
   height: 100%;
   width: 50%;
   object-fit: cover;
   object-position: 0% 70%;
+} */
+
+.meImage {
+  border-radius: 100%;
+  border: 2px solid var(--primary-color);
+}
+
+.image-box {
+  height: 100%;
+  width: 50%;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text {
@@ -46,7 +60,11 @@
     flex-direction: column;
   }
 
-  .meImage,
+  .image-box {
+    width: 100%;
+  }
+
+  /* .meImage, */
   .text {
     width: 100%;
     height: 50%;
