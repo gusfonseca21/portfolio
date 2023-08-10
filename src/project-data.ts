@@ -28,6 +28,7 @@ export const projectData: projectDataProps[] = [
       "/images/projects/forkify/forkify-3.webp",
     ],
     projectLink: "https://forkify-mu.vercel.app/",
+    openSourceLink: "https://github.com/gusfonseca21/Forkify",
   },
   {
     id: 2,
