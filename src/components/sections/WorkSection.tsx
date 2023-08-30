@@ -20,6 +20,7 @@ export default function WorkSection() {
       perView: "auto",
       spacing: 15,
     },
+    renderMode: "performance",
     detailsChanged(property) {
       setSliderProgress(property.track.details.progress);
     },
