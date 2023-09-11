@@ -22,7 +22,7 @@ function LoadingScreen() {
         >
           <motion.img
             src={tag.src}
-            alt='LOKKEE STUDIOS'
+            alt='Gustavo Fonseca'
             width={tag.width}
             height={tag.height}
             decoding='sync'
