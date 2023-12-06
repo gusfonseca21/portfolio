@@ -63,7 +63,7 @@ export default function WorkSection() {
   return (
     <section id='work' className={styles.main}>
       <span className='section-title'>Projetos</span>
-      <h2 className='section-heading'>Explore algumas criações</h2>
+      <h2 className='section-heading'>Explore algumas das minhas criações</h2>
       <div
         className={styles["project-slider"]}
         draggable={false}

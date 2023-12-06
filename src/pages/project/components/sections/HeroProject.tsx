@@ -20,6 +20,8 @@ export default function HeroProject({
 }: projectDataProps) {
   if (!title) return;
 
+  console.log(projectLink);
+
   return (
     <section id='hero' className={styles.main}>
       <GoBackButton />
@@ -46,7 +48,7 @@ export default function HeroProject({
           ))}
         </div>
         <div className={styles.buttons}>
-          <ViewProjectButton link={projectLink ? projectLink : ""} />
+          {projectLink ? <ViewProjectButton link={projectLink} /> : ""}
           {openSourceLink ? <OpenSourceButton link={openSourceLink} /> : ""}
         </div>
       </div>

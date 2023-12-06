@@ -48,4 +48,19 @@ export const projectData: projectDataProps[] = [
     projectLink: "https://expense-tracker-web-deploy.vercel.app/",
     openSourceLink: "https://github.com/gusfonseca21/expense-tracker",
   },
+  {
+    id: 3,
+    title: "ADB Memory Logger",
+    date: "2023-11",
+    description:
+      "Ferramenta para automatizar a tarefa de gerar logs e gráficos do consumo de memória de um aplicativo em dispositivos Android.",
+    tags: ["Automação", "Batch Script", "Python", "Android"],
+    buttons: ["viewSourceCode"],
+    headImage: "/images/projects/adb-memory-logger/adb-header.webp",
+    exampleImages: [
+      "/images/projects/adb-memory-logger/adb-1.webp",
+      "/images/projects/adb-memory-logger/adb-header.webp",
+    ],
+    openSourceLink: "https://github.com/gusfonseca21/adb-memory-logger",
+  },
 ];

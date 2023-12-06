@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import "../../app/globals.css";
 import styles from "./[projectName].module.css";
 import Navbar from "@/components/ui/Navbar";
@@ -12,6 +11,7 @@ import Image from "next/image";
 import RelatedProjects from "./components/sections/RelatedProjects";
 import GoBackButton from "./components/ui/GoBackButton";
 import { Footer } from "@/components/sections";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 

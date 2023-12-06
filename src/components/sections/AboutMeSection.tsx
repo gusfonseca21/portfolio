@@ -1,37 +1,36 @@
 import styles from "./AboutMeSection.module.css";
 import Image from "next/image";
-import meImage from "../../../public/images/me.webp";
+import meImage from "../../../public/images/me-2.webp";
 import { AnimatedHeading } from "../AnimatedHeading";
 
 const headings = [
-  "Desenvolvedor",
+  "Programador",
+  "Botafoguense",
   "Apaixonado por tecnologia",
-  "Solucionador de problemas",
-  "Determinado",
-  "Aprendiz Incansável",
+  "Aprendiz diligente",
 ];
 
 export default function AboutMeSection({}) {
   return (
     <section id='about' className={styles.main}>
-      {/* <Image
+      <Image
         draggable={false}
         className={styles.meImage}
         src={meImage}
         alt='Gustavo Fonseca'
         priority
         unoptimized
-      /> */}
-      <div className={styles["image-box"]}>
-        <Image
-          draggable={false}
-          className={styles.meImage}
-          src={meImage}
-          alt='Gustavo Fonseca'
-          priority
-          unoptimized
-        />
-      </div>
+      />
+      {/* <div className={styles["image-box"]}>
+      <Image
+        draggable={false}
+        className={styles.meImage}
+        src={meImage}
+        alt='Gustavo Fonseca'
+        priority
+        unoptimized
+      />
+      </div> */}
       <div className={styles.text}>
         <span className='section-title'>Sobre Mim</span>
         <div className={styles.heading}>
