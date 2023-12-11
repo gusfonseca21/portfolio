@@ -5,7 +5,6 @@ import { AnimatedHeading } from "../AnimatedHeading";
 
 const headings = [
   "Programador",
-  "Botafoguense",
   "Apaixonado por tecnologia",
   "Aprendiz diligente",
 ];
