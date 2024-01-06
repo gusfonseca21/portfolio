@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../app/globals.css";
 import styles from "./[projectName].module.css";
 import Navbar from "@/components/ui/Navbar";
@@ -12,11 +12,22 @@ import RelatedProjects from "./components/sections/RelatedProjects";
 import GoBackButton from "./components/ui/GoBackButton";
 import { Footer } from "@/components/sections";
 import { useRouter } from "next/router";
+import YouTube, { YouTubePlayer } from "react-youtube";
+import { useInView } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function ProjectPage() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const youtubeRef = useRef(null);
+  const videoRef = useRef(null);
+  const isInView = useInView(youtubeRef, { once: true });
+
+  useEffect(() => {
+    if (isInView && youtubeRef.current)
+      youtubeRef?.current.getInternalPlayer().playVideo();
+  }, [isInView]);
 
   const router = useRouter();
 
@@ -52,6 +63,15 @@ export default function ProjectPage() {
         }`}
       >
         <HeroProject {...selectedProject} />
+        {selectedProject.video ? (
+          <div ref={videoRef}>
+            <YouTube
+              videoId={selectedProject.video}
+              opts={{ width: 1024, height: 720 }}
+              ref={youtubeRef}
+            />
+          </div>
+        ) : null}
         <div className={styles["example-images"]}>
           {selectedProject.exampleImages.map((image, index) => {
             return (

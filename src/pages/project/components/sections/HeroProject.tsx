@@ -20,8 +20,6 @@ export default function HeroProject({
 }: projectDataProps) {
   if (!title) return;
 
-  console.log(projectLink);
-
   return (
     <section id='hero' className={styles.main}>
       <GoBackButton />

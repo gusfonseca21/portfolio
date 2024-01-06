@@ -9,6 +9,7 @@ export type projectDataProps = {
   exampleImages: string[];
   projectLink?: string;
   openSourceLink?: string;
+  video?: string;
 };
 
 export type Buttons = "viewProject" | "viewSourceCode";
@@ -47,6 +48,7 @@ export const projectData: projectDataProps[] = [
     ],
     projectLink: "https://expense-tracker-web-deploy.vercel.app/",
     openSourceLink: "https://github.com/gusfonseca21/expense-tracker",
+    video: "umywIWBvy6I",
   },
   {
     id: 3,
@@ -62,5 +64,6 @@ export const projectData: projectDataProps[] = [
       "/images/projects/adb-memory-logger/adb-header.webp",
     ],
     openSourceLink: "https://github.com/gusfonseca21/adb-memory-logger",
+    video: "oGt-YYQF27Y",
   },
 ];
