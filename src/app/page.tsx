@@ -14,7 +14,6 @@ import { ToastContainer, ToastContainerProps, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import LoadingScreen from "@/components/LoadingScreen";
 import { useInView } from "framer-motion";
-import { isMobile } from "react-device-detect";
 
 const toastProps: ToastContainerProps = {
   position: "bottom-center",
