@@ -26,6 +26,7 @@ export default function ProjectPage() {
 
   useEffect(() => {
     if (isInView && youtubeRef.current)
+      //@ts-ignore
       youtubeRef?.current.getInternalPlayer().playVideo();
   }, [isInView]);
 
